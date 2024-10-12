@@ -1,0 +1,22 @@
+encoder:
+  otype: HashGrid
+  n_levels: 23
+  n_features_per_level: 4
+  log2_hashmap_size: 23
+  base_resolution: 16
+  max_resolution_factor: 2
+
+net:
+  otype: FullyFusedMLP
+  activation: LeakyReLU
+  output_activation: None
+  n_neurons: 128
+  n_hidden_layers: 4
+  include_identity: True
+base_lr: 0.0002
+batch_per_proj: 1     
+warmup:
+  steps: 2000                       
+  lr0: 0.0001 
+  otype: linear
+model: hypercubes

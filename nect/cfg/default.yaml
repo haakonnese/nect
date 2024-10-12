@@ -1,0 +1,56 @@
+image_interval: 300                # (float) Seconds between generating images. Negative to not save any images
+checkpoint_interval: 900           # (float) Seconds between saving checkpoints. Negative to not save checkpoint     
+plot_type: XY                      # Slice to plot. Plots the middle slice of the specified axis. Supported: XY, XZ, YZ. Ignored if image_interval=-1
+save_volume: False                 # (bool) save the volume to disk. Ignored if mode = dynamic
+
+
+# Optimization options
+epochs: auto                       # (int | 'auto' | '<float>x') Number of epochs. Base-epochs=auto is: floor(49 / num_projections * max(nDetector)). e.g. 1.5x is then 1.5 times base-epochs
+loss: L1                           # Loss function. Supported: L1, L2.  
+optimizer: 
+  otype: Adam                      # Optimizer for training. Supported: Adam, NAdam, RAdam, SGD, Lion
+  weight_decay: 0.0                # (float) Weight decay.
+  beta1: 0.9                       # (float) 1st moment decay for Adam-based/Lion optimizer. Momentum for SGD
+  beta2: 0.999                     # (float) 2nd moment decay for Adam-based/Lion optimizer. Ignored for SGD
+
+base_lr: 0.001                     # (float) Initial learning rate
+
+lr_scheduler:
+  otype: cosine                    # Learning rate scheduler. Supported: Exponential, Cosine
+  lrf: auto                        # (float < 1 | 'auto') Final learning rate fraction of initial learning rate. Final learning rate is lrf * lr
+
+warmup:
+  steps: 500                       # (int) Number of warmup steps for exponential warmup. 
+  lr0: 0.001                       # (float < 1) Initial learning rate factor for exponential warmup. lr0 * lr is the initial learning rate 
+
+s3im: False                        # (bool) Use S3IM for training
+
+batch_per_proj: 1                  # (all or int >= 1) Number of batches per projection. If all, use all pixels in the projection. If a number, use a maximum of n batches per projection before going to the next projection
+
+
+downsampling_detector:
+  start: 2                         # (int >= 1) Start downsampling factor for the detector
+  end: 1                           # (int >= 1) End downsampling factor for the detector
+  update_interval: 1000            # (int >= 1) Update interval for downsampling factor. The downsampling factor is halved every update_interval steps
+
+points_per_ray:
+  start: 100                       # (int >= 1) Start number of points per ray
+  end: auto                        # (int >= 1 | 'auto' | <float>x) End number of points per ray. 'auto' sets to 1.5 * max(nDetector). e.g. 1.5x sets maximum points per ray to 1.5 * max(nDetector)
+  update_interval: auto            # (int > 0 | 'auto' | '<float>x') Update interval for number of points per ray. The number of points per ray is doubled every update_interval steps. If linear is used, update with 1 steps per projection. Auto calculates update interval based on epochs and projections. If e.g. 0.5x is used, end is reached after half of the epochs
+  linear: True                     # (bool) Linear increase instead of doubling
+
+add_poisson: False                 # (bool) Add Poisson noise to the simulated projections during training
+points_per_batch: auto             # (int > 0 | 'auto') Number of points per batch. Often the highest number of points that can fit in memory will give the best results. Auto tries to fit up to 5 000 000 points per batch
+
+geometry: null
+channel_order: NHW
+
+# evaluation:
+#   gt_path: null                  # (str) Supported: path to numpy object or name of SciVis dataset     
+#   gt_path_mode: SciVis           # (str) Mode for ground truth path. Supported: SciVis, path. SciVis: use the SciVis dataloading. path: use dataloading of numpy object in format [Z, Y, X]
+
+reconstruction_mode: voxel         # (str) Reconstruction mode. Supported: voxel, cylindrical. Voxel will use nVoxel, sVoxel and dVoxel defined in geometry file to only sample inside the object. Cylindrical will add a cylindrical mask so that sampling only happens inside the cylinder. Radius and height can be set in the geometry file or will be calculated
+
+model: null                        # (str) Model type. Supported: hash_grid, double_hash, time_encode_feature_vector, double_hash_encoder, double_hash_encoder_double_network, kplanes, pirate. See docs for more information about what the different models do
+uniform_ray_spacing: True          # (bool) Sample with uniform distance if True, if False, sample uniform number of points
+

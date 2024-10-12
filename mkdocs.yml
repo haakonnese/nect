@@ -1,0 +1,127 @@
+site_name: NeCT - Neural Computed Tomography
+
+repo_name: haakonnese/NeCT
+# TODO: rename to "projector"?
+repo_url: https://github.com/haakonnese/NeCT
+
+# Copyright (shown at the footer)
+copyright: 'Copyright &copy; 2024 Håkon Nese & Henrik Friis'
+
+theme:
+  name: material
+  #favicon: favicon.svg
+  #logo: favicon.svg
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.annotate
+    - content.code.copy
+    # - content.action.view
+    - content.tooltips
+    - content.footnote.tooltips
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - content.tabs.link
+    - navigation.expand
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.indexes
+    - navigation.sections
+  palette:
+    primary: white
+    accent: black
+
+plugins:
+  - include-markdown
+  - search
+  - gen-files:
+      scripts:
+      - docs/scripts/gen_ref_nav.py
+  - mkdocstrings:
+      enabled: true
+      default_handler: python
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_root_heading: true
+            show_source: true
+            # filters: ["!^_"]
+            # heading_level: 1
+            # members: true
+            inherited_members: true
+            class_members: true
+            merge_init_into_class: true
+            parameter_headings: true
+            separate_signature: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: true
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - glightbox
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - meta
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+# Dev server binding
+
+nav:
+  - Home: index.md
+  - User guide:
+    - Getting started: 
+      - userguide/start/index.md
+      - Installation: userguide/start/installation.md
+      - Quick Start: userguide/start/quickstart.md
+    - Geometry:
+      - userguide/geometry/index.md
+    - Reconstruction Configuration:
+      - userguide/config/index.md
+
+    - Demo:
+      - userguide/demo/index.md
+      - "00 - Static: from file": userguide/demo/00_static_from_file.md
+      - "01 - Static: from array": userguide/demo/01_static_from_array.md
+      - "02 - Geometry": userguide/demo/02_geometry.md
+      - "03 - Dynamic: export video": userguide/demo/03_dynamic_video.md
+      - "04 - Dynamic: export volumes": userguide/demo/04_dynamic_volumes.md
+      - "05 - Parallel beam geometry": userguide/demo/05_parallel_beam.md
+  - About:
+      - Licensing and citation: about/licensing-and-citation.md
+  - API reference:
+    - nect: reference/

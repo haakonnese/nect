@@ -1,0 +1,13 @@
+encoder:
+  grid_dimensions: 2
+  input_coordinate_dim: 3
+  output_coordinate_dim: 32
+  resolution: [256, 256, 256]
+
+net:
+  otype: FullyFusedMLP
+  activation: ReLU
+  output_activation: ReLU
+  n_neurons: 128
+  n_hidden_layers: 4
+  
