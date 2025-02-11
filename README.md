@@ -20,7 +20,7 @@ The project has been tested to work on both Windows and Linux with the following
 </table>
 
 We recommend using [conda](https://docs.anaconda.com/free/anaconda/install/) to manage the python environment. 
-The project has been tested for `python=3.10,3.11` and `pytorch=2.1`, but we assume it will work with newer versions as well. To install the project for multiple different compute capabilities, follow the instructions in the issue [here](#install-multiple-compute-capabilities).
+The project has been tested for `python=3.10,3.11` and `pytorch=2.1`, but we assume it will work with newer versions as well. To install the project for multiple different compute capabilities, follow the instructions [here](#install-multiple-compute-capabilities).
 
 
 Then create a conda environment and install all the dependencies. Make sure that both `PATH` and `LD_LIBRARY_PATH` includes the paths to the CUDA binaries as described in [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn/) before installing. If you experience some error when installing related to `tiny-cuda-nn`, please go to [issues of tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn/issues) and search to try to solve the problem. As binaries will be built for both tiny-cuda-nn and NeCT, the installation will usually take at least several minutes. 
@@ -33,12 +33,12 @@ pip install -v git+https://github.com/haakonnese/nect
 ```
 
 ### Install multiple compute capabilities
-To install the project for multiple different compute capabilities, follow the instructions below. The following environment variables needs to be set before installing NeCT if you want to build the binaries for multiple compute capabilities. In the example below, we install for compute capabilities 60 (P100), 70 (V100) and 80 (A100).  
+To install the project for multiple different compute capabilities, follow the instructions below. The following environment variables needs to be set before installing NeCT if you want to build the binaries for multiple compute capabilities. In the example below, we install for compute capabilities 60 (P100), 70 (V100), 80 (A100) and 90 (H100).  
 ```bash
-export CUDA_ARCHITECTURES="60;70;80"
+export CUDA_ARCHITECTURES="60;70;80;90"
 export CMAKE_CUDA_ARCHITECTURES=${CUDA_ARCHITECTURES}
 export TCNN_CUDA_ARCHITECTURES=${CUDA_ARCHITECTURES}
-export TORCH_CUDA_ARCH_LIST="6.0 7.0 8.0"
+export TORCH_CUDA_ARCH_LIST="6.0 7.0 8.0 9.0"
 export FORCE_CUDA="1"
 ```
 
