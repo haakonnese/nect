@@ -1,3 +1,9 @@
+"""
+The demo demonstrates how to create a 3D phantom and visualize it using Plotly. The 3D phantom can be used
+to verify the correctness of the forward model or the reconstruction algorithm. The demo creates a cuboid and a sphere
+that moves in a predefined trajectory.
+"""
+
 import numpy as np
 import plotly.graph_objects as go
 import torch
@@ -25,27 +31,6 @@ if __name__ == "__main__":
 
     phantom = Phantom(size=(30, 30, 30))
     phantom.add_phantom_object(obj=[cuboid_obj, sphere_obj])
-
-    ### CODE FOR PLOTTING STATIC 3D PLOT ###
-
-    # values = phantom.get_phantom(t=0).numpy()
-    # # Create a meshgrid from the values array
-
-    # X, Y, Z = np.mgrid[0:values.shape[0], 0:values.shape[1], 0:values.shape[2]]
-
-    # fig = go.Figure(data=go.Volume(
-    #     x=X.flatten(),
-    #     y=Y.flatten(),
-    #     z=Z.flatten(),
-    #     value=values.flatten(),
-    #     isomin=0.1,
-    #     isomax=0.8,
-    #     opacity=0.1, # needs to be small to see through all surfaces
-    #     surface_count=17, # needs to be a large number for good volume rendering
-    #     ))
-    # fig.show()
-
-    ### CODE FOR PLOTTING ANIMATED 3D PLOT ###
 
     frames = []
     values_list = [phantom.get_phantom(top=t).numpy() for t in np.linspace(0, 5, 5)]

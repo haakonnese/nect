@@ -991,7 +991,7 @@ def cfg_sanity_check(cfg: dict):
                 [
                     (
                         lambda x, y: x in y or os.path.exists(x),
-                        ["SciVis", "PORE"],
+                        ["SciVis", "PorousMedium"],
                         "path does not exist",
                     )
                 ],

@@ -8,7 +8,6 @@ from typing import Literal, cast, overload
 
 import numpy as np
 import torch
-from dacite import from_dict
 from loguru import logger
 
 from nect.config import (
@@ -290,10 +289,10 @@ def reconstruct_from_config_file(
             from nect.trainers.scivis_trainer import SciVisTrainer
 
             trainer = SciVisTrainer
-        elif config.evaluation.gt_path_mode.upper() == "PORE":
-            from nect.trainers.pore_trainer import PoreTrainer
+        elif config.evaluation.gt_path_mode.upper() == "POROUSMEDIUM":
+            from nect.trainers.porous_medium_trainer import PorousMediumTrainer
 
-            trainer = PoreTrainer
+            trainer = PorousMediumTrainer
     if config.continous_scanning is True:
         from nect.trainers.continous_scanning_trainer import ContinousScanningTrainer
 

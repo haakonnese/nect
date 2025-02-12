@@ -1,10 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
-
+from pathlib import Path
 
 def save_video(video_images: list[np.ndarray], file_name: str, fps: int = 5):
     fig, ax = plt.subplots()
+    file_name = Path(file_name)
+    file_name.parent.mkdir(parents=True, exist_ok=True)
 
     def update(frame):
         ax.clear()  # Clear the previous frame
@@ -19,3 +21,4 @@ def save_video(video_images: list[np.ndarray], file_name: str, fps: int = 5):
 
     ani.save(file_name, writer=writer)  # Save the video
     plt.close(fig)
+    print(f"Video saved to {file_name}")

@@ -1,7 +1,5 @@
 from pathlib import Path
-from typing import Literal
 
-import cv2
 import numpy as np
 import tifffile as tif
 import torch
@@ -9,8 +7,8 @@ from loguru import logger
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from nect.config import Config, get_cfg
-from nect.utils import is_fourcc_available, setup_logger
+from nect.config import get_cfg
+from nect.utils import setup_logger
 from nect.sampling import Geometry
 from nect.data import NeCTDataset
 

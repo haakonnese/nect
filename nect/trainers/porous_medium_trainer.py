@@ -22,17 +22,17 @@ def load_pickle(file):
         return pickle.load(f)
 
 
-class PoreTrainer(BaseTrainer):
+class PorousMediumTrainer(BaseTrainer):
     def setup_evaluator(self):
         if self.fabric.is_global_zero:
             if self.config.evaluation is None or self.config.evaluation.gt_path is None:
                 raise ValueError("GT path must be provided for evaluation")
-            pore = load_pickle(self.config.evaluation.gt_path)
-            pore.dynamic = True
+            porous_medium = load_pickle(self.config.evaluation.gt_path)
+            porous_medium.dynamic = True
             self.gt = []
             self.mask = None
             for i in range(11):
-                volume = np.rot90(pore.get_phantom(i / 10, scaled=True), axes=(1, 2)).copy()
+                volume = np.rot90(porous_medium.get_phantom(i / 10, scaled=True), axes=(1, 2)).copy()
                 if self.mask is None:
                     self.mask = np.zeros_like(volume)
                     size = volume.shape[1]

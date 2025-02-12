@@ -21,7 +21,7 @@ def create_random_closed_geometry(size=(100, 100)) -> CustomGeometry:
     return CustomGeometry(mask=geometry)
 
 
-def eoi_simple_dynamic_pore(intensity: np.ndarray, t: float) -> np.ndarray:
+def eoi_simple_dynamic_porous_medium(intensity: np.ndarray, t: float) -> np.ndarray:
     t = int(t)
     if t == 0:
         intensity[0] = np.where(

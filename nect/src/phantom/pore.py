@@ -105,14 +105,6 @@ class EmptyCanvas:
         self.base_img = np.ones(size)
 
     def get_phantom(self, t: float) -> np.ndarray:
-        """Fills the pores with fluid according to simulation results at time t.
-
-        Args:
-            t (float): Simulation time
-
-        Returns:
-            np.ndarray: An array with pores filled according to simulation results at time t.
-        """
         dynamic_img = self.base_img.copy()
         for cube in self.cubes:
             dynamic_img = cube.place_cube(dynamic_img)
@@ -122,7 +114,7 @@ class EmptyCanvas:
         return dynamic_img
 
 
-class Pore:
+class PorousMedium:
     def __init__(
         self,
         shape: np.ndarray = (50, 50, 50),
@@ -130,29 +122,29 @@ class Pore:
         porosity: float = 0.5,
         divs: int = 1,
     ) -> None:
-        """Creates a pore geometry. Calling with divs > 1 processes the pore in parallel.
+        """Creates a porous medium geometry. Calling with divs > 1 processes the porous medium in parallel.
 
         Args:
-            shape (np.ndarray, optional): The shape of the pore. Defaults to (50,50,50).
-            blobiness (list[int], optional): The blobiness of the pore. Defaults to [1].
-            porosity (float, optional): The porosity of the pore. Defaults to 0.5.
+            shape (np.ndarray, optional): The shape of the porous medium. Defaults to (50,50,50).
+            blobiness (list[int], optional): The blobiness of the porous medium. Defaults to [1].
+            porosity (float, optional): The porosity of the porous medium. Defaults to 0.5.
             divs (int, optional): The number of divisions to use in parallel computing. Defaults to 1.
         """
         self.mask = ps.generators.blobs(shape=shape, porosity=porosity, blobiness=blobiness, divs=divs)
 
 
-class MultiScalePore:
-    def __init__(self, pore1: Pore, pore2: Pore) -> None:
-        """Creates a pore geometry that is the intersection of two pore geometries.
+class MultiScalePorousMedium:
+    def __init__(self, medium1: PorousMedium, medium2: PorousMedium) -> None:
+        """Creates a porous medium geometry that is the intersection of two porous medium geometries.
 
         Args:
-            pore1 (Pore): The first pore geometry.
-            pore2 (Pore): The second pore geometry.
+            medium1 (PorousMedium): The first porous medium.
+            medium2 (PorousMedium): The second porous medium.
         """
-        self.mask = ~(~pore1.mask * pore2.mask)
+        self.mask = ~(~medium1.mask * medium2.mask)
 
 
-class PorePhantom:
+class PorousMediumPhantom:
     def __init__(
         self,
         geometry: np.ndarray,
@@ -161,11 +153,11 @@ class PorePhantom:
         poisson_noise: bool = False,
         dynamic: bool = True,
     ) -> None:
-        """Creates a pore phantom based on the geometry (shape=(z, y, x)). The inlet defines the direction of the flow.
+        """Creates a porous medium phantom based on the geometry (shape=(z, y, x)). The inlet defines the direction of the flow.
         "xyt" should be read as "in the direction of the xy-plane from the top" and "yb" as "in the direction of the y-axis from the bottom".
 
         Args:
-            geometry (np.ndarray): The pore geometry. Can be created with the Pore class.
+            geometry (np.ndarray): The porous medium geometry. Can be created with the PorousMedium class.
             inlet (str, optional): A string defining the direction of inlet flow. Defaults to "xyt".
             cylindrical (bool, optional): Whether to create a cylindrical phantom. Defaults to False.
         """
@@ -176,7 +168,7 @@ class PorePhantom:
         self.bd = self.create_inlet(inlet=inlet)
         self.target = self.get_target(
             scale=True
-        )  # When scale is True, the timescale of pore filling will always be between 0 and 1.
+        )  # When scale is True, the timescale of porous medium filling will always be between 0 and 1.
         self.base_img = np.zeros_like(self.target)
         self.base_img[~geometry] = IntensityConfig.ROCK  # Setting rock to 2 for contrast
         self.steps = np.sort(np.unique(self.target)[1:])

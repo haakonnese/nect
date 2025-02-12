@@ -1,3 +1,7 @@
+"""
+The file contains various phantom configurations that can be used for model testing and validation.
+"""
+
 from enum import IntEnum
 
 import numpy as np
@@ -17,14 +21,14 @@ from nect.src.phantom.geometric import (
 )
 from nect.src.phantom.utils import (
     create_random_closed_geometry,
-    eoi_simple_dynamic_pore,
+    eoi_simple_dynamic_porous_medium,
 )
 
 
 class IntensityConfig(IntEnum):
     ROCK = 3
     AIR = 1
-    WATER = 2  #  0.12 /cm at 300keV https://physics.nist.gov/PhysRefData/XrayMassCoef/ComTab/water.html
+    WATER = 2
 
 
 def test_phantom_3D():
@@ -335,11 +339,11 @@ def moving_objects_one_constant_changing_intensity_phantom(save_video=False) -> 
     return phantom
 
 
-def dynamic_2d_pores(save_video=False):
+def dynamic_2d_porous_medium(save_video=False):
     custom = CustomGeometry(mask=ps.generators.blobs(shape=[100, 100], porosity=0.5, blobiness=2))
     custom_object = PhantomObject(
         eom=lambda tlbr, t: tlbr,
-        eoi=eoi_simple_dynamic_pore,
+        eoi=eoi_simple_dynamic_porous_medium,
         tl=torch.tensor([0, 0]),
         geometry=custom,
         intensity=custom.mask.astype(np.uint8),
@@ -350,11 +354,11 @@ def dynamic_2d_pores(save_video=False):
     if save_video:
         # Save the phantom to a video
         time_steps = np.arange(0, 30, 1)
-        phantom.save_video(time_steps, "src/phantom/cfg_videos/dynamic_2d_pores.mp4")
+        phantom.save_video(time_steps, "src/phantom/cfg_videos/dynamic_2d_porous_medium.mp4")
 
 
-# if __name__ == "__main__":
-#     #phantom = moving_objects_constant_intensity_phantom(save_video=True)
-#     #phantom = moving_objects_one_constant_constant_intensity_phantom(save_video=True)
-#     #phantom = moving_objects_one_constant_changing_intensity_phantom(save_video=True)
-#     phantom = dynamic_2d_pores(save_video=True)
+if __name__ == "__main__":
+    phantom = moving_objects_constant_intensity_phantom(save_video=True)
+    phantom = moving_objects_one_constant_constant_intensity_phantom(save_video=True)
+    phantom = moving_objects_one_constant_changing_intensity_phantom(save_video=True)
+    phantom = dynamic_2d_porous_medium(save_video=True)
