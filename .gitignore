@@ -29,6 +29,7 @@ MANIFEST
 # Sphinx documentation
 docs/_build/
 
-
+data
+nect/data
 # mkdocs documentation
 /site

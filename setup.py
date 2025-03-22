@@ -3,20 +3,10 @@ import os
 import torch
 from setuptools import setup, find_packages
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
-import subprocess
-import sys
+import pybind11
 # Check if CUDA is available
 cuda = torch.cuda.is_available()
 
-def install_pybind11():
-    try:
-        import pybind11
-    except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "pybind11>=2.11"])
-
-# Install pybind11 if it's not installed
-install_pybind11()
-import pybind11
 
 if cuda:
     source_files = [str(pathlib.Path("nect/sampling/ct_sampling.cu"))]
@@ -51,31 +41,12 @@ setup(
     package_data={"nect.cfg": ["**/*"]},
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     ext_modules=[ext_mod],
     cmdclass={"build_ext": BuildExtension},
-    install_requires=[
-        'numpy>=1.23, <2',
-        'matplotlib>=3.7',
-        'Pillow>=10.0',
-        'scipy>=1.10',
-        'jinja2>=3.1',
-        'tqdm>=4.66',
-        'loguru>=0.7',
-        'pynvml>=11.5',
-        'python-dotenv>=1.0',
-        'dacite>=1.8.1',
-        'torchinfo>=1.8.0',
-        'tensorboard>=2.16.2',
-        'tifffile>=2024.5.22',
-        'napari>=0.5.1',
-        'pyqt5>=5.15.11',
-        'tinycudann @ git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch'
-    ],
-    python_requires='>=3.9',
+    python_requires='>=3.11',
 )

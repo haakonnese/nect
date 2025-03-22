@@ -214,6 +214,7 @@ class Geometry:
             detector_binning=1,
             angles=cfg.get("angles", None),
             timesteps=cfg.get("timesteps", None),
+            radians=cfg.get("radians", True),
         )
 
     @classmethod

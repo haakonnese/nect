@@ -504,6 +504,7 @@ class Config:
             config["img_path"] = str(config["img_path"])
             config["encoder"].pop("nDetector", None)
             config["encoder"].pop("nVoxel", None)
+            config["mode"] = self.mode
             yaml.dump(config, f)
         with open(os.path.join(output_directory, "model", "geometry.yaml"), "w") as f:
             if isinstance(geometry["angles"], np.ndarray):
@@ -643,7 +644,10 @@ def get_cfg(path: str | pathlib.Path, model: str | None = None, static: bool | N
         if static is None:
             static_cfg = cfg_specific.get("mode")
             if static_cfg not in ["static", "dynamic"]:
-                raise ValueError(f"Mode {static_cfg} is not valid")
+                if model in ["kplanes", "hash_grid"]:
+                    static_cfg = "static"
+                else:
+                    static_cfg = "dynamic"
             static = static_cfg == "static"
     if static:
         cfg = get_static_cfg(model)

@@ -121,6 +121,7 @@ nav:
       - "03 - Dynamic: export video": userguide/demo/03_dynamic_video.md
       - "04 - Dynamic: export volumes": userguide/demo/04_dynamic_volumes.md
       - "05 - Parallel beam geometry": userguide/demo/05_parallel_beam.md
+      - "06 - Dynamic: export projections": userguide/demo/06_dynamic_export_video_projections.md
   - About:
       - Licensing and citation: about/licensing-and-citation.md
   - API reference:

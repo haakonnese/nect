@@ -161,10 +161,8 @@ def reconstruct(
 
     if mode == "static":
         cfg = get_static_cfg(name="hash_grid")
-        cfg["model"] = "hash_grid"
     elif mode == "dynamic":
         cfg = get_dynamic_cfg(name="quadcubes")
-        cfg["model"] = "quadcubes"
     if channel_order is not None:
         cfg["channel_order"] = channel_order
     cfg["flip"] = flip_projections
@@ -222,6 +220,8 @@ def reconstruct(
         log_path = Path("outputs")
     else:
         log_path = Path("outputs") / exp_name
+    if mode == "dynamic":
+        log = True
     if isinstance(projections, (str, Path)):
         trainer = BaseTrainer(
             config=config,

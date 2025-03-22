@@ -6,7 +6,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from .download_demo_data import download_demo_data
+from nect.download_demo_data import download_demo_data, get_demo_data_path
 
 import nect
 
@@ -21,13 +21,13 @@ geometry = nect.Geometry(
     mode="cone",  # Geometry mode (cone or parallel)
     radians=False,  # Angle units (radians (True) or degrees (False))
 )
-demo_dir = Path(__file__).parent
-download_demo_data(mode="static", folder="cone")
+demo_dir = get_demo_data_path("Carp-cone")
+download_demo_data("Carp-cone")
 volume = nect.reconstruct(
     geometry=geometry,
-    projections=demo_dir / "NeCT-data" / "static" / "cone" / "projections.npy",
+    projections=demo_dir / "projections.npy",
     log=True,
     exp_name="carp",
     quality="low",
 )
-plt.imsave(str(demo_dir / "carp.png"), volume[128], cmap="gray", dpi=300)
+plt.imsave("carp.png", volume[128], cmap="gray", dpi=300)

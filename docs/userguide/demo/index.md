@@ -12,3 +12,4 @@ We provide several demo-files to easier get started. The files are placed under 
 ### Dynamic CT reconstruction
 - [03 - Dynamic: export video](03_dynamic_video.md) show how to do a 4DCT reconstruction and export videos (original and difference video)
 - [04 - Dynamic: export volumes](04_dynamic_volumes.md) show how to do a 4DCT reconstruction when the pair of angles and projections are not ordered by the acqusition time. In the end, volumes for multiple timesteps are exported and saved as 3D tiff-files. 
+- [06 - Dynamic: export video of projections](06_dynamic_export_video_projections.md) show how to do export videos of the projections. This can be used as a quality check of the projections.

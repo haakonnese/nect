@@ -4,7 +4,7 @@ Demo 01: Reconstruct a static volume from an array"""
 from pathlib import Path
 
 import numpy as np
-from .download_demo_data import download_demo_data
+from nect.download_demo_data import download_demo_data, get_demo_data_path
 
 import nect
 
@@ -17,10 +17,10 @@ geometry = nect.Geometry(
     dVoxel=[1.0, 1.0, 1.0],  # Size of voxels [height, width, depth]/[z, y, x]
     angles=np.linspace(0, 360, 49, endpoint=False),  # Projection angles
     mode="cone",  # Geometry mode (cone or parallel)
-    radians=True,  # Angle units (radians (True) or degrees (False))
+    radians=False,  # Angle units (radians (True) or degrees (False))
 )
-demo_dir = Path(__file__).parent
-download_demo_data(mode="static", folder="cone")
-projections = np.load(demo_dir / "NeCT-data" / "static" / "cone" / "projections.npy")
+download_demo_data("Carp-cone", force_download=True) # Download the demo data. You can force a re-download by setting force_download=True
+demo_dir = get_demo_data_path("Carp-cone")
+projections = np.load(demo_dir / "projections.npy")
 volume = nect.reconstruct(geometry=geometry, projections=projections, quality="high")
-np.save(demo_dir / "volume.npy", volume)
+np.save("volume.npy", volume)

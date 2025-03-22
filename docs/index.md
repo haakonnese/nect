@@ -2,7 +2,7 @@
 ![NeCT Pipeline](images/pipeline.png)
 
 [Paper](https://arxiv.org/xxxxx){: .md-button .md-button--primary .md-button--large}
-[Code :fontawesome-brands-github:](https://github.com/xxxxx){: .md-button .md-button--primary .md-button--large}
+[Code :fontawesome-brands-github:](https://github.com/haakonnese/nect){: .md-button .md-button--primary .md-button--large}
 
 NeCT is a project that aims to use deep learning to improve the quality of computed tomography (CT) images. The project is a collaboration between the Norwegian Univeristy of Science and Technology (NTNU) and the CT lab at Equinor. NeCT allows for both static and dynamic CT reconstruction, and the project is based on the INR framework [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn).
 
