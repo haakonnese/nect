@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from nect.src.sampling.methods import equidistant, golden_angle, golden_angle_v3
+from nect.src.sampling.methods import equidistant, golden_angle, hybrid_golden_angle
 
 
 @pytest.mark.parametrize(
@@ -59,8 +59,8 @@ def test_golden_angle_sampling(nprojs, radians):
         "17 projections, 2 revolutions",
     ],
 )
-def test_golden_angle_v3_sampling(nprojs, nrevs, radians):
-    angles = golden_angle_v3(nproj=nprojs, nrevs=nrevs, radians=radians)
+def test_hybrid_golden_angle_sampling(nprojs, nrevs, radians):
+    angles = hybrid_golden_angle(nproj=nprojs, nrevs=nrevs, radians=radians)
     assert angles.shape == (nrevs, nprojs)
     assert np.min(angles) >= 0
     if radians:

@@ -5,8 +5,6 @@ from tqdm import tqdm
 from nect.src.sampling.methods import equidistant, golden_angle
 from nect.src.simulator.scheduler import Scheduler
 
-# from nect.src.phantom.geometric import Phantom
-
 
 def equidistant_sampling(image, nprojs, nrevs, radians=False, *args, **kwargs):
     """

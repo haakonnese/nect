@@ -40,8 +40,7 @@ def golden_angle(nprojs: int, radians: bool = True) -> np.ndarray:
         return angles
 
 
-def golden_angle_v3(nprojs, nrevs, radians=True, starting=0):
-    """Copied from Ruben's code 4D_CT/Golden Angle Analysis/analysisV3.ipynb"""
+def hybrid_golden_angle(nprojs, nrevs, radians=True, starting=0):
     golden_angle_sampling = lambda n, inc: np.mod((n * 1 / ((np.sqrt(5) - 1) / 2) * inc), inc)
 
     startings = golden_angle_sampling(np.arange(starting, nrevs), 360 / nprojs)
@@ -52,31 +51,8 @@ def golden_angle_v3(nprojs, nrevs, radians=True, starting=0):
     if radians:
         return angles * np.pi / 180
 
-    # Reorder angles such that they appear in increasing/decreasing order per revolution
     angles[1::2, ...] = angles[
         1::2, ::-1
-    ]  # Every other sublist/revolution is reversed to simulate the CT moving clockwise then anticlockwise
+    ]
     angles = np.array(angles).flatten()
     return angles
-
-
-if __name__ == "__main__":
-    angles = golden_angle_v3(100, 56, radians=False)
-    print(angles)
-    print(angles[100:])
-    # print(np.diff(angles))
-    # print(np.sum(np.abs(np.diff(angles))))
-    # # np.savetxt("angles.txt", angles, delimiter=",")
-    # # angles = equidistant(25, 50, radians=False)
-
-    # arr_list = angles.tolist()
-    # print(len(arr_list))
-    # # Convert the list to a string with commas separating the numbers
-    # arr_str = ",".join(map(str, arr_list))
-
-    # # Save the string to a file
-    # file_path = "array_numbers.txt"
-    # with open(file_path, "w") as file:
-    #     file.write(arr_str)
-
-    # print(f"Array saved to {file_path}")

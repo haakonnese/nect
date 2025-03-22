@@ -3,7 +3,7 @@ import torch
 from leaptorch import Projector
 from tqdm import tqdm
 
-from nect.src.sampling.methods import equidistant, golden_angle_v3
+from nect.src.sampling.methods import equidistant, hybrid_golden_angle
 from nect.src.simulator.configuration.config import LeapGeometry
 
 
@@ -76,7 +76,7 @@ def dynamic_equidistant_sampling(
     return time_series, theta
 
 
-def dynamic_golden_angle_v3_sampling(
+def dynamic_hybrid_golden_angle_sampling(
     dynamic_image,
     scheduler,
     nprojs: int,
@@ -103,7 +103,7 @@ def dynamic_golden_angle_v3_sampling(
     print("[WARNING] LeapTorch arrays are shifted by -n_projs//4. This might change in the future")
     time_series = np.zeros((nrevs * nprojs, proj.numRows, proj.numCols))  # Initialize sinogram
     time = 0
-    theta = torch.from_numpy(golden_angle_v3(nprojs=nprojs, nrevs=nrevs, radians=radians)).float()
+    theta = torch.from_numpy(hybrid_golden_angle(nprojs=nprojs, nrevs=nrevs, radians=radians)).float()
     for i in tqdm(range(len(theta)), desc="Sampling: "):
         phantom = torch.from_numpy(dynamic_image.get_phantom(float(time))).to(device).unsqueeze(0).float()
         proj.update_phi(theta[[i]])
@@ -112,7 +112,7 @@ def dynamic_golden_angle_v3_sampling(
     return time_series, theta.detach().cpu().numpy()
 
 
-def dynamic_golden_angle_v3_sampling_linear_time(
+def dynamic_hybrid_golden_angle_sampling_linear_time(
     dynamic_image,
     scheduler,
     nprojs: int,
@@ -139,7 +139,7 @@ def dynamic_golden_angle_v3_sampling_linear_time(
     print("[WARNING] LeapTorch arrays are shifted by -n_projs//4. This might change in the future")
     time_series = np.zeros((nrevs * nprojs, proj.numRows, proj.numCols))  # Initialize sinogram
     time = np.linspace(0, 1, num=nprojs * nrevs, endpoint=True)
-    theta = torch.from_numpy(golden_angle_v3(nprojs=nprojs, nrevs=nrevs, radians=radians)).float()
+    theta = torch.from_numpy(hybrid_golden_angle(nprojs=nprojs, nrevs=nrevs, radians=radians)).float()
     for i in tqdm(range(len(theta)), desc="Sampling: "):
         phantom = (
             torch.from_numpy(dynamic_image.get_phantom(float(time[i]), blinking_cubes=kwargs.get("blinking_cubes")))
@@ -149,5 +149,4 @@ def dynamic_golden_angle_v3_sampling_linear_time(
         )
         proj.update_phi(theta[[i]])
         time_series[i, ...] = proj(phantom).squeeze(0).detach().cpu().numpy()
-        # plt.imsave(f"/cluster/home/henrfr/4D-CT/networks/inr/paper/time_resolution/imgs/{i:04d}.png", phantom.detach().cpu().numpy()[0,128,...])
     return time_series, theta.detach().cpu().numpy()

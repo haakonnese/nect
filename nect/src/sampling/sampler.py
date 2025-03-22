@@ -36,7 +36,7 @@ class Sampler:
             "golden_angle_tigre",
             "dynamic_equidistant_leaptorch",
             "equidistant_leaptorch",
-            "dynamic_golden_angle_v3_leaptorch",
+            "dynamic_hybrid_golden_angle_leaptorch",
         ]
         self.method = self.resolve_method(method)
         self.scheduler = scheduler
@@ -82,10 +82,10 @@ class Sampler:
             return leap.dynamic_equidistant_sampling
         elif method == "equidistant_leaptorch":
             return leap.equidistant_sampling
-        elif method == "dynamic_golden_angle_v3_leaptorch":
-            return leap.dynamic_golden_angle_v3_sampling
-        elif method == "dynamic_golden_angle_v3_linear_time_leaptorch":
-            return leap.dynamic_golden_angle_v3_sampling_linear_time
+        elif method == "dynamic_hybrid_golden_angle_leaptorch":
+            return leap.dynamic_hybrid_golden_angle_sampling
+        elif method == "dynamic_hybrid_golden_angle_linear_time_leaptorch":
+            return leap.dynamic_hybrid_golden_angle_sampling_linear_time
         else:
             raise NotImplementedError(
                 f"Method {method} not supported. Supported methods are: {self.supported_sampling_methods}"
