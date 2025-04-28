@@ -5,7 +5,7 @@ NeCT is a project that aims to use deep learning to improve the quality of compu
 - [GUI](#gui)
 - [Licensing and Citation](#licensing-and-citation)
 
-![NeCT Reconstruction Pipeline](docs/images/Reconstruction%20pipeline.png)
+![NeCT Reconstruction Pipeline](docs/images/pipeline.png)
 
 ## Installation
 The project has been tested to work on both Windows and Linux with the following dependencies
