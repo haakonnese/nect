@@ -1,5 +1,5 @@
 """
-Demo 04: Reconstruct a dynamic volume and export volumes of the reconstruction.""
+Demo 04: Reconstruct a dynamic volume and export volumes of the reconstruction. For more fine-grained control, look at the export_volumes function.""
 """
 
 from pathlib import Path
@@ -20,7 +20,7 @@ reconstruction_path = nect.reconstruct(
         "epochs": "3x",  # a multiplier of base-epochs. Base-epochs is: floor(49 / num_projections * max(nDetector))
         "checkpoint_interval": 1800,  # How often to save the model in seconds
         "image_interval": 600,  # How often to save images in seconds
-        "plot_type": "XZ", # XZ or XY, YZ
+        "plot_type": "XZ",  # XZ or XY, YZ
     },
 )
 nect.export_volumes(reconstruction_path, binning=3, avg_timesteps=5)
