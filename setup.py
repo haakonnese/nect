@@ -48,5 +48,5 @@ setup(
     ],
     ext_modules=[ext_mod],
     cmdclass={"build_ext": BuildExtension},
-    python_requires='>=3.11',
+    python_requires='>=3.11,<3.13',
 )

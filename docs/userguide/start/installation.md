@@ -1,30 +1,37 @@
-
 NeCT has been tested on **Windows** and **Linux** with the following dependencies:
 
 | Package         | Version           | Notes              |
 |-----------------|-------------------|--------------------|
 | python          | 3.11 \| 3.12      |                    |
-| pytorch         | 2.5               |                    |
-| CUDA            | 12.1 \| 12.4      |                    |
+| pytorch         | 2.4 - 2.7         |                    |
+| CUDA            | 12.X              |                    |
 | CMake (Linux)   | 3.24              | For tiny-cuda-nn   |
 | C++17 (Windows) |                   | For tiny-cuda-nn   |
 
 > **Recommended:** Use [conda](https://docs.anaconda.com/free/anaconda/install/) or [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage your Python environment.
 >
 > - For video export, the `avc1` codec for `ffmpeg` is only available with conda. With uv, video export uses the `mp4v` codec. If video export using `avc1` is vital, use conda.
-> - Tested with `python=3.11, 3.12` and `pytorch=2.5`. Newer (and older) versions may also work.
+> - Tested with `python=3.11, 3.12` and `pytorch>=2.4,<2.8`.
 > - To install for multiple compute capabilities, see [below](#install-multiple-compute-capabilities).
 
 **Note:** Ensure `PATH` and `LD_LIBRARY_PATH` include the CUDA binaries as described in [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn/). If you encounter installation errors related to `tiny-cuda-nn`, check their [issues page](https://github.com/NVlabs/tiny-cuda-nn/issues). Building binaries for both tiny-cuda-nn and NeCT may take several minutes.
 
 ### Uv Installation
-
+If you don't have uv installed, follow the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/). This will install pytorch with CUDA 12.4.
 ```bash
 uv venv --python=3.12
 source venv/bin/activate
-uv pip install git+https://github.com/haakonnese/nect
+uv pip install git+https://github.com/haakonnese/nect[torch]
 uv pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch --no-build-isolation
 ```
+
+#### Custom PyTorch Version
+To use a specific PyTorch version (2.4-2.7) visit the [PyTorch Installation Page](https://pytorch.org/get-started/locally/) and install the desired PyTorch version into your uv environment. Then install NeCT with:
+```bash
+uv pip install git+https://github.com/haakonnese/nect --no-build-isolation-package torch
+uv pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch --no-build-isolation
+```
+
 ### Conda Installation
 
 ```bash

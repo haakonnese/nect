@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel", "torch~=2.5", "pybind11>=2.11"]
+requires = ["setuptools>=80.0.0", "wheel", "pybind11>=2.12", "torch"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,9 +10,9 @@ authors = [
     {name = "Håkon Nese", email = "haakon.nese@gmail.com"},
     {name = "Henrik Friis", email = "henrik.friis@outlook.com"}
 ]
-license = {text = "MIT"}
+license = "MIT"
 readme = "README.md"
-requires-python = "==3.12.*"
+requires-python = ">=3.11,<3.13"
 dependencies = [
     "opencv-python",
     "matplotlib>=3.7",
@@ -27,16 +27,14 @@ dependencies = [
     "torchinfo>=1.8.0",
     "tensorboard>=2.16.2",
     "tifffile==2024.5.22",
-    "napari>=0.5.1",
-    "pyqt5>=5.15.11",
-    "torch~=2.5",
     "lightning~=2.5",
-    "torchvision~=0.20",
 ]
 
-
 [project.optional-dependencies]
-tinycudann = ["tinycudann @ git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch"]
+torch = [
+    "torch>=2.2,<2.8",
+    "torchvision",
+]
 
 [[tool.uv.index]]
 name = "pytorch-cu124"
