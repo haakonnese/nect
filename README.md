@@ -9,6 +9,7 @@ NeCT leverages deep learning to improve computed tomography (CT) image quality, 
 
 - [Installation](#installation)
 - [Demo](#demo)
+- [Data](#data)
 - [GUI](#gui)
 - [Licensing and Citation](#licensing-and-citation)
 
