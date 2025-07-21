@@ -1,1 +1,0 @@
-Before reconstructing it is always smart to verify that the data is in the format you expect. This is best done visually, and NeCT provides a simple framework for creating a video of all the projections. The projections are ordered as specified in `timestep`

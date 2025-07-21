@@ -1,4 +1,4 @@
-Start using `NeCT` to reconstruct CT images or 4DCT videos. 
+Start using `NeCT` to reconstruct CT images or 4DCT videos. For more advanced usage, look at the [demos](../demo/index.md), the [geometry configuration](../geometry.md), and how to set up the [configuration file](../config.md).
 
 === "Static CT"
 

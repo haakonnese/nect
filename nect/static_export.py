@@ -19,7 +19,6 @@ def export_volume(
     ROIx: list[int] | None = None,
     ROIy: list[int] | None = None,
     ROIz: list[int] | None = None,
-    dtype: np.dtype = np.float32
 ) -> Path:
     """
     Exports volume from the static model output. The volume will be saved in the base_path/volumes directory.
@@ -27,9 +26,10 @@ def export_volume(
     Args:
         base_path (str | Path): Path to the directory containing the config.yaml and checkpoints folder.
         binning (int, optional): Binning factor. Defaults to 1.
-        avg_timesteps (int, optional): Number of timesteps to average together. Defaults to 1.
-        skip_timesteps (int, optional): Number of timesteps to skip. Defaults to 0.
-        export_revolutions (list | str, optional): List of revolutions to export. Defaults to "all".
+        show_slices (bool, optional): If True, will show slices of the volume instead of saving it. Defaults to False.
+        ROIx (list[int] | None, optional): Region of interest in x direction. Defaults to None. If None, the ROI will be the full range.
+        ROIy (list[int] | None, optional): Region of interest in y direction. Defaults to None. If None, the ROI will be the full range.
+        ROIz (list[int] | None, optional): Region of interest in z direction. Defaults to None. If None, the ROI will be the full range.
 
     Returns:
         Path to the saved volumes.

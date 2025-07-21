@@ -108,10 +108,8 @@ nav:
       - userguide/start/index.md
       - Installation: userguide/start/installation.md
       - Quick Start: userguide/start/quickstart.md
-    - Geometry:
-      - userguide/geometry/index.md
-    - Reconstruction Configuration:
-      - userguide/config/index.md
+    - Geometry: userguide/geometry.md
+    - Reconstruction Configuration: userguide/config.md
 
     - Demo:
       - userguide/demo/index.md
@@ -122,7 +120,6 @@ nav:
       - "04 - Dynamic: export volumes": userguide/demo/04_dynamic_volumes.md
       - "05 - Parallel beam geometry": userguide/demo/05_parallel_beam.md
       - "06 - Dynamic: export projections": userguide/demo/06_dynamic_export_video_projections.md
-  - About:
-      - Licensing and citation: about/licensing-and-citation.md
-  - API reference:
-    - nect: reference/
+      - "07 - Reconstruction from config file": userguide/demo/07_reconstruct_from_cfg_file.md
+  - Licensing and citation: about/licensing-and-citation.md
+  - API reference: reference/

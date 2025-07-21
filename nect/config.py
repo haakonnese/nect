@@ -1076,7 +1076,7 @@ def get_config(
     model: str | None = None,
     mode: str = "static",
     channel_order: str | None = None,
-):
+) -> Config:
     """
     Get configuration.
 
@@ -1086,10 +1086,9 @@ def get_config(
         model (str, optional): Model type. Defaults to None.
         mode (str, optional): Mode. Defaults to "static".
         channel_order (str, optional): Channel order. Defaults to None.
-        flip (bool, optional): Flip. Defaults to False.
 
     Returns:
-        dict: Configuration.
+        Config. Configuration as a dataclass.
     """
     if mode not in ["static", "dynamic"]:
         raise ValueError(f"Mode {mode} is not valid, must be either 'static' or 'dynamic")

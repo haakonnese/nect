@@ -1,4 +1,5 @@
 # NeCT: Neural Computed Tomography
+
 ![NeCT Pipeline](images/pipeline.png)
 
 [Paper (to be added)](){: .md-button .md-button--primary .md-button--large}
@@ -7,14 +8,15 @@
 NeCT leverages deep learning to improve computed tomography (CT) image quality, supporting both static and dynamic CT reconstruction. The project is a collaboration between the Norwegian Univeristy of Science and Technology (NTNU) and the CT lab at Equinor.  The project is based on the INR framework [`tiny-cuda-nn`](https://github.com/NVlabs/tiny-cuda-nn/).
 
 - [User guide](userguide/start/index.md)
-    - [Installation](userguide/start/installation.md)
-    - [Quick start](userguide/start/quickstart.md)
-    - [Geometry configuration](userguide/geometry/index.md)
-    - [Configuration](userguide/config/index.md)
+  - [Installation](userguide/start/installation.md)
+  - [Quick start](userguide/start/quickstart.md)
+  - [Geometry configuration](userguide/geometry.md)
+  - [Configuration](userguide/config.md)
 - [Demo](userguide/demo/index.md)
 - [Licensing and Citation](about/licensing-and-citation.md)
 
 ## Showcase: Bentheimer Sandstone Imbibition
+
 <figure>
     <video width="1080" controls autoplay muted loop>
             <source src="images/showcase1.mp4" type="video/mp4">
@@ -29,7 +31,7 @@ NeCT leverages deep learning to improve computed tomography (CT) image quality, 
     <video width="1080" controls autoplay muted loop>
     <source src="images/showcase2.mp4" type="video/mp4">
     Your browser does not support the video tag.
-    </video>   
+    </video>
     <figcaption>
         Rendering of the dissolution of a salt grain. Three orthogonal slices visualize its temporal evolution. In the xz slice, it is possible to observe the brine coming into contact with the salt before it starts to dissolve.
     </figcaption>
