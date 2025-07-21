@@ -4,19 +4,13 @@ NeCT leverages deep learning to improve computed tomography (CT) image quality, 
 <table>
   <tr>
     <td>
-      <video width="480" controls autoplay muted loop>
-        <source src="docs/images/showcase1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <img src="docs/images/showcase1.gif" width="480">
       <p>
         Rendering of spontaneous imbibition in a Bentheimer sandstone reconstructed using NeCT. The brine flowing into the sample is shown in light blue, while the salt grains dissolving are presented in red.
       </p>
     </td>
     <td>
-      <video width="480" controls autoplay muted loop>
-        <source src="docs/images/showcase2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+        <img src="docs/images/showcase2.gif" width="480">
       <p>
         Rendering of the dissolution of a salt grain. Three orthogonal slices visualize its temporal evolution. In the xz slice, it is possible to observe the brine coming into contact with the salt before it starts to dissolve.
       </p>
