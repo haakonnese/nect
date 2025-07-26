@@ -100,12 +100,7 @@ Demo scripts are in the [demo](./demo/) folder. The first time you reconstruct d
 
 ## Data
 
-All projections from the dynamic experiments are available at [OSF NeCT project](https://osf.io/2w8xc/). Under is the download link for
-
-- [Simulated fluid invasion projections](https://osf.io/download/j4umw/)
-- [Bentheimer projections](https://files.de-1.osf.io/v1/resources/2w8xc/providers/osfstorage/67d08a82ec5b8741b044b5e4/?zip=)
-
-The download may take some time as the files are quite large
+All projections from the dynamic experiments are available at [Zenodo](https://zenodo.org/records/16448474).
 
 ## GUI
 

@@ -5,66 +5,75 @@ from typing import Literal
 from tqdm import tqdm
 import zipfile
 import shutil
+import hashlib
 
-def download_folder(project_id: str, osf_folder: str, local_folder: pathlib.Path, force_download: bool = False):
-    # print("Listing OSF files, this might take some time...")
-    base_url = f"https://api.osf.io/v2/nodes/{project_id}/files/osfstorage/"
-    params = {"page[size]": 100}
-    files = []
-    url = base_url
-    while url:
-        resp = requests.get(url, params=params)
-        # print(resp.json())
-        resp.raise_for_status()
-        data = resp.json()
-        # Check if the item is a folder and list its contents recursively
-        for item in data.get("data", []):
-            
-            if item["attributes"]["kind"] == "file":
-                file_id = item["id"]
-                if osf_folder in item["attributes"]["materialized_path"]:
-                    folder_url = f"https://osf.io/download/{file_id}/"
-                    # Check if the folder already exists
-                    if os.path.exists(local_folder):
-                        if force_download:
-                            shutil.rmtree(local_folder)
-                        elif not (len(os.listdir(local_folder)) == 1 and f"{file_id}.zip" == os.listdir(local_folder)[0]):
-                            print(f"Skipping {osf_folder}, already exists.")
-                            continue
-                    r = requests.get(folder_url, stream=True)
-                    with tqdm(total=int(r.headers.get('content-length', 0)), unit='B', unit_scale=True, desc=f"Downloading {osf_folder}") as pbar:
-                        r.raise_for_status()
-                        zip_path = local_folder / f"{file_id}.zip"
-                        zip_path.parent.mkdir(parents=True, exist_ok=True)
-                        with open(zip_path, "wb") as f:
-                            for chunk in r.iter_content(chunk_size=10*1024*1024):
-                                if chunk:
-                                    f.write(chunk)
-                                    pbar.update(len(chunk))
-                    # Extract the zip file
-                    local_folder.mkdir(parents=True, exist_ok=True)
-                    print(f"Extracting {osf_folder}...")
-                    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+def verify_checksum(file_path, expected_checksum):
+    hash_algo, hash_value = expected_checksum.split(':', 1)
+    h = hashlib.new(hash_algo)
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest() == hash_value
 
-                        zip_ref.extractall(local_folder.parent)
-                    # Remove the zip file after extraction
-                    os.remove(zip_path)
-        url = data.get("links", {}).get("next")
 
-def download_demo_data(data = Literal["Carp-parallel", "Carp-cone", "SimulatedFluidInvasion"], force_download: bool = False):
+def download_file(project_id: str, data: str, local_folder: pathlib.Path, force_download: bool = False):
+    url = f"https://zenodo.org/api/records/{project_id}/files/{data}.zip"
+    if os.path.exists(local_folder):
+        if force_download:
+            shutil.rmtree(local_folder)
+        elif not (len(os.listdir(local_folder)) == 1 and f"{data}.zip" == os.listdir(local_folder)[0]):
+            print(f"Skipping {data}, already exists.")
+            return local_folder
+    r = requests.get(url)
+    r_json = r.json()
+    checksum = r_json.get('checksum', None)
+    size = r_json.get('size', 0)
+    content_path = r_json.get('links', {}).get('content', None)
+    r_content = requests.get(content_path, stream=True)
+    zip_path = local_folder / f"{data}.zip"
+    zip_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with tqdm(total=int(size), unit='B', unit_scale=True, desc=f"Downloading {data}") as pbar:
+            r_content.raise_for_status()
+            with open(zip_path, "wb") as f:
+                for chunk in r_content.iter_content(chunk_size=10*1024*1024):
+                    if chunk:
+                        f.write(chunk)
+                        pbar.update(len(chunk))
+        if checksum:
+            if not verify_checksum(zip_path, checksum):
+                os.remove(zip_path)
+                raise ValueError(f"Checksum mismatch for {zip_path}")
+        local_folder.mkdir(parents=True, exist_ok=True)
+        print(f"Extracting {data}... at {local_folder}")
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            # Check the contents of the zip file
+            names = zip_ref.namelist()
+            top_level = {n.split('/')[0] for n in names if n.strip('/')}
+            if len(top_level) == 1 and list(top_level)[0] == data:
+                extract_path = local_folder.parent
+            else:
+                extract_path = local_folder
+            zip_ref.extractall(extract_path)
+        os.remove(zip_path)
+        return local_folder
+    except KeyboardInterrupt:
+        print("Download interrupted. Cleaning up...")
+        if os.path.exists(zip_path):
+            os.remove(zip_path)
+        raise KeyboardInterrupt("Download was interrupted by the user.")
+
+def download_demo_data(data = Literal["Carp-parallel", "Carp-cone", "SimulatedFluidInvasion", "Bentheimer"], force_download: bool = False):
     local_cache_dir = pathlib.Path(__file__).parent / "data"
     local_cache_dir.mkdir(exist_ok=True)
-    project_id = "2w8xc"
-    osf_folder = f"/{data}"
+    project_id = "16448474"
     local_folder = local_cache_dir / data
-    download_folder(project_id, osf_folder, local_folder, force_download)
+    return download_file(project_id, data, local_folder, force_download)
 
 
-def get_demo_data_path(data = Literal["Carp-parallel", "Carp-cone", "SimulatedFluidInvasion"]):
+def get_demo_data_path(data = Literal["Carp-parallel", "Carp-cone", "SimulatedFluidInvasion", "Bentheimer"]):
     local_cache_dir = pathlib.Path(__file__).parent / "data"
     return local_cache_dir / data
 
-# Example usage
-# download_folder("your_project_id", "/data", "./local_data")
 if __name__ == "__main__":
-    download_demo_data("Carp-cone")
+    download_demo_data("Bentheimer")
