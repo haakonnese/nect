@@ -17,4 +17,5 @@ base_lr: 0.0002
 batch_per_proj: 1     
 warmup:
   steps: 2000                       
-  lr0: 0.0001 
+  lr0: 0.0001
+model: double_hash_grid

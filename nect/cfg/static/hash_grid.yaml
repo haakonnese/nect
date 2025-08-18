@@ -12,4 +12,4 @@ net:
   output_activation: ReLU
   n_neurons: 64
   n_hidden_layers: 6
-  
+model: hash_grid
