@@ -19,6 +19,9 @@ NeCT leverages deep learning to improve computed tomography (CT) image quality, 
 </table>
 
 <p align="center">
+    <a href="https://rdcu.be/eBgrb" target="_blank">
+        <img src="https://img.shields.io/badge/Paper-red?style=for-the-badge" alt="Paper"/>
+    </a>
     <a href="https://haakonnese.github.io/nect/" target="_blank">
         <img src="https://img.shields.io/badge/NeCT%20Documentation-blueviolet?style=for-the-badge&logo=readthedocs" alt="NeCT Documentation"/>
     </a>
@@ -112,4 +115,26 @@ This project is licensed under the MIT license.
 
 A collaboration between the Norwegian University of Science and Technology (NTNU) and the CT lab at Equinor.
 
-If you use NeCT in your research, please cite: **(Will be added)**
+If you use NeCT in your research, please cite: 
+```bibtex
+@article{Friis2025Nect,
+author={Friis, Henrik
+        and Nese, Håkon
+        and Luani, Giacomo
+        and Pryme, Colin
+        and Rennan, Lars
+        and Chattopadhyay, Basab
+        and Kristoffersen, Anders
+        and Mengshoel, Ole Jakob
+        and Breiby, Dag Werner},
+title={Implicit neural representation for fast 4D computed tomography of multiphase flow in porous media},
+journal={Communications Physics},
+year={2025},
+volume={8},
+number={1},
+pages={339},
+issn={2399-3650},
+doi={10.1038/s42005-025-02249-0},
+url={https://doi.org/10.1038/s42005-025-02249-0}
+}
+```
