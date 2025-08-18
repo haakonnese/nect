@@ -10,4 +10,4 @@ net:
   output_activation: ReLU
   n_neurons: 128
   n_hidden_layers: 4
-  
+model: kplanes
