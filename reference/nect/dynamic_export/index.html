@@ -1,0 +1,2761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../download_demo_data/">
+      
+      
+        <link rel="next" href="../fdk/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>dynamic_export - NeCT - Neural Computed Tomography</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nect.dynamic_export" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeCT - Neural Computed Tomography" class="md-header__button md-logo" aria-label="NeCT - Neural Computed Tomography" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeCT - Neural Computed Tomography
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dynamic_export
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/haakonnese/NeCT" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    haakonnese/NeCT
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../userguide/start/" class="md-tabs__link">
+          
+  
+    
+  
+  User guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/licensing-and-citation/" class="md-tabs__link">
+        
+  
+    
+  
+  Licensing and citation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  API reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeCT - Neural Computed Tomography" class="md-nav__button md-logo" aria-label="NeCT - Neural Computed Tomography" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NeCT - Neural Computed Tomography
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/haakonnese/NeCT" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    haakonnese/NeCT
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../userguide/start/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    User guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/licensing-and-citation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Licensing and citation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nect
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nect
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cfg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> cfg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download_demo_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> download_demo_data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dynamic_export
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dynamic_export
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nect.dynamic_export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;dynamic_export
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=" dynamic_export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nect.dynamic_export.export_video" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;export_video
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.dynamic_export.export_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;export_volumes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.dynamic_export.export_volumes_at_timesteps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;export_volumes_at_timesteps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> fdk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../network/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> network
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reconstruct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> reconstruct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sampling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> sampling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scivis_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> scivis_data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../src/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> src
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static_export/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> static_export
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../trainers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> trainers
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../torch_extra/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> torch_extra
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> torch_extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../torch_extra/nn/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nn
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../torch_extra/typing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nect.dynamic_export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;dynamic_export
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=" dynamic_export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nect.dynamic_export.export_video" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;export_video
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.dynamic_export.export_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;export_volumes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.dynamic_export.export_volumes_at_timesteps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;export_volumes_at_timesteps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1><code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dynamic_export</h1>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="nect.dynamic_export" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">dynamic_export</span>
+
+
+<a href="#nect.dynamic_export" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nect.dynamic_export.export_video" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">export_video</span>
+
+
+<a href="#nect.dynamic_export.export_video" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">export_video</span><span class="p">(</span><span class="n">base_path</span><span class="p">:</span> <span class="n">str</span> <span class="o">|</span> <span class="n"><span title="pathlib.Path">Path</span></span><span class="p">,</span> <span class="n">add_scale_bar</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">acquisition_time_minutes</span><span class="p">:</span> <span class="n">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">plot_slice</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;XZ&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">difference</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">difference_revolutions</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">video_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;video&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Exports a video of the dynamic model output. The video will be saved in the base_path directory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>base_path</code></td>
+            <td>
+                  <code>str | <span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the directory containing the config.yaml and checkpoints folder.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>add_scale_bar</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to add a scale bar to the video. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>acquisition_time_minutes</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Acquisition time in minutes. Required if add_scale_bar is True. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>plot_slice</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Slice to plot. Must be one of "XY", "XZ", "YZ". Defaults to "XZ".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;XZ&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>fps</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Frames per second. Defaults to 5.</p>
+              </div>
+            </td>
+            <td>
+                  <code>5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>difference</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Export a difference video. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>difference_revolutions</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of revolutions for the background in the difference video. Defaults to 1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>video_name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the video. Defaults to "video".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;video&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the saved video.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/dynamic_export.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">export_video</span><span class="p">(</span>
+    <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">add_scale_bar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">acquisition_time_minutes</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">plot_slice</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;XZ&quot;</span><span class="p">,</span>
+    <span class="n">fps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">difference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">difference_revolutions</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">video_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;video&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exports a video of the dynamic model output. The video will be saved in the base_path directory.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        base_path (str | Path): Path to the directory containing the config.yaml and checkpoints folder.</span>
+<span class="sd">        add_scale_bar (bool, optional): Whether to add a scale bar to the video. Defaults to False.</span>
+<span class="sd">        acquisition_time_minutes (float, optional): Acquisition time in minutes. Required if add_scale_bar is True. Defaults to None.</span>
+<span class="sd">        plot_slice (str, optional): Slice to plot. Must be one of &quot;XY&quot;, &quot;XZ&quot;, &quot;YZ&quot;. Defaults to &quot;XZ&quot;.</span>
+<span class="sd">        fps (int, optional): Frames per second. Defaults to 5.</span>
+<span class="sd">        difference (bool, optional): Export a difference video. Defaults to True.</span>
+<span class="sd">        difference_revolutions (int, optional): Number of revolutions for the background in the difference video. Defaults to 1.</span>
+<span class="sd">        video_name (str, optional): Name of the video. Defaults to &quot;video&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path to the saved video.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">setup_logger</span><span class="p">()</span>
+    <span class="n">base_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>  <span class="c1"># use torch.no_grad() to disable gradient computation and avoid retaining graph</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;config.yaml&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;dynamic&quot;</span><span class="p">,</span> <span class="s2">&quot;Only dynamic mode is supported for video creation&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting to load model&quot;</span><span class="p">)</span>
+        <span class="n">checkpoints</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;checkpoints&quot;</span> <span class="o">/</span> <span class="s2">&quot;last.ckpt&quot;</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="n">video_path</span> <span class="o">=</span> <span class="n">base_path</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;videos&quot;</span>
+        <span class="n">video_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoints</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">])</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Model loading finished&quot;</span><span class="p">)</span>
+        <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">plot_slice</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="s2">&quot;xz&quot;</span><span class="p">,</span> <span class="s2">&quot;yz&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid plot_slice. Must be one of &#39;XY&#39;, &#39;XZ&#39;, &#39;YZ&#39;&quot;</span><span class="p">)</span>
+        <span class="n">plot_slice</span> <span class="o">=</span> <span class="n">plot_slice</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">plot_slice</span> <span class="o">==</span> <span class="s2">&quot;xy&quot;</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">plot_slice</span> <span class="o">==</span> <span class="s2">&quot;xy&quot;</span>
+                <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">plot_slice</span> <span class="o">==</span> <span class="s2">&quot;xz&quot;</span>
+                <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">plot_slice</span> <span class="o">==</span> <span class="s2">&quot;yz&quot;</span>
+                <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">indexing</span><span class="o">=</span><span class="s2">&quot;ij&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">z</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+        <span class="n">angles</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">angles</span>
+        <span class="n">projs_per_revolution</span> <span class="o">=</span> <span class="n">get_number_of_projections_per_revolution</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+
+        <span class="c1"># avc1 is not available on all systems, so we use mp4v as a fallback. avc1 is preferred because it uses the h.264 codec which can be viewed on most devices</span>
+        <span class="k">if</span> <span class="n">is_fourcc_available</span><span class="p">(</span><span class="s2">&quot;avc1&quot;</span><span class="p">):</span>
+            <span class="n">fourcc</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter_fourcc</span><span class="p">(</span><span class="o">*</span><span class="s2">&quot;avc1&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fourcc</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter_fourcc</span><span class="p">(</span><span class="o">*</span><span class="s2">&quot;mp4v&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">difference</span><span class="p">:</span>
+            <span class="n">avg_img</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">n_percent</span> <span class="o">=</span> <span class="n">projs_per_revolution</span> <span class="o">*</span> <span class="n">difference_revolutions</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+            <span class="n">n_steps</span> <span class="o">=</span> <span class="mi">30</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="n">n_percent</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+                <span class="n">avg_img</span> <span class="o">+=</span> <span class="n">model</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_steps</span>
+            <span class="n">out_diff</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">video_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s2">_diff.mp4&quot;</span><span class="p">),</span>
+                <span class="n">fourcc</span><span class="p">,</span>
+                <span class="n">fps</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>
+                <span class="n">isColor</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">out_merge</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">video_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s2">_merge.mp4&quot;</span><span class="p">),</span>
+                <span class="n">fourcc</span><span class="p">,</span>
+                <span class="n">fps</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>
+                <span class="n">isColor</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">video_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s2">.mp4&quot;</span><span class="p">),</span>
+            <span class="n">fourcc</span><span class="p">,</span>
+            <span class="n">fps</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>
+            <span class="n">isColor</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">))):</span>
+            <span class="n">output</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">difference</span><span class="p">:</span>
+                <span class="n">output_diff</span> <span class="o">=</span> <span class="n">output</span> <span class="o">-</span> <span class="n">avg_img</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">255</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">add_scale_bar</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="p">(</span>
+                    <span class="n">acquisition_time_minutes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="p">),</span> <span class="s2">&quot;acquisition_time_minutes must be provided if add_scale_bar is True&quot;</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">add_scale_bar_and_text</span><span class="p">(</span>
+                    <span class="n">frame</span><span class="o">=</span><span class="n">output</span><span class="p">,</span>
+                    <span class="n">time</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+                    <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+                    <span class="n">acquisition_time_minutes</span><span class="o">=</span><span class="n">acquisition_time_minutes</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">difference</span><span class="p">:</span>
+                <span class="n">output_diff</span> <span class="o">=</span> <span class="n">output_diff</span> <span class="o">+</span> <span class="mi">4</span>
+                <span class="n">output_diff</span> <span class="o">=</span> <span class="n">output_diff</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">255</span>
+                <span class="n">output_diff</span> <span class="o">=</span> <span class="n">output_diff</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+                <span class="n">output_diff</span> <span class="o">=</span> <span class="n">output_diff</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+                <span class="n">output_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">output_diff</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">add_scale_bar</span><span class="p">:</span>
+                    <span class="k">assert</span> <span class="p">(</span>
+                        <span class="n">acquisition_time_minutes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                    <span class="p">),</span> <span class="s2">&quot;acquisition_time_minutes must be provided if add_scale_bar is True&quot;</span>
+                    <span class="n">output_diff</span> <span class="o">=</span> <span class="n">add_scale_bar_and_text</span><span class="p">(</span>
+                        <span class="n">frame</span><span class="o">=</span><span class="n">output_diff</span><span class="p">,</span>
+                        <span class="n">time</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+                        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+                        <span class="n">acquisition_time_minutes</span><span class="o">=</span><span class="n">acquisition_time_minutes</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="c1"># add text to the image in the top left corner saying the time</span>
+
+                <span class="n">out_diff</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_diff</span><span class="p">)</span>
+                <span class="n">out_merge</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">output</span><span class="p">,</span> <span class="n">output_diff</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">difference</span><span class="p">:</span>
+            <span class="n">out_diff</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+            <span class="n">out_merge</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Video saved to </span><span class="si">{</span><span class="n">base_path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s1">.mp4&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">difference</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Difference video saved to </span><span class="si">{</span><span class="n">base_path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s1">_diff.mp4&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Merged video saved to </span><span class="si">{</span><span class="n">base_path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s1">_merge.mp4&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">base_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s2">.mp4&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nect.dynamic_export.export_volumes" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">export_volumes</span>
+
+
+<a href="#nect.dynamic_export.export_volumes" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">export_volumes</span><span class="p">(</span><span class="n">base_path</span><span class="p">:</span> <span class="n">str</span> <span class="o">|</span> <span class="n"><span title="pathlib.Path">Path</span></span><span class="p">,</span> <span class="n">binning</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">avg_timesteps</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">timesteps_per_revolution</span><span class="p">:</span> <span class="n">int</span> <span class="o">|</span> <span class="n"><span title="typing.Literal">Literal</span></span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">export_revolutions</span><span class="p">:</span> <span class="n">list</span> <span class="o">|</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">show_slices</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ROIx</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ROIy</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ROIz</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n"><span title="numpy.dtype">dtype</span></span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Exports volumes from the dynamic model output. The volumes will be saved in the base_path/volumes directory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>base_path</code></td>
+            <td>
+                  <code>str | <span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the directory containing the config.yaml and checkpoints folder.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>binning</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Binning factor. Defaults to 1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>avg_timesteps</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of timesteps to average together. Defaults to 1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>timesteps_per_revolution</code></td>
+            <td>
+                  <code>int | <span title="typing.Literal">Literal</span>[&#39;all&#39;]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of timesteps to export per revolution. Defaults to "all".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;all&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>export_revolutions</code></td>
+            <td>
+                  <code>list | str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of revolutions to export. Defaults to "all".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;all&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the saved volumes.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/dynamic_export.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">export_volumes</span><span class="p">(</span>
+    <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">binning</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">avg_timesteps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">timesteps_per_revolution</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;all&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="n">export_revolutions</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="n">show_slices</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">ROIx</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ROIy</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ROIz</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exports volumes from the dynamic model output. The volumes will be saved in the base_path/volumes directory.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        base_path (str | Path): Path to the directory containing the config.yaml and checkpoints folder.</span>
+<span class="sd">        binning (int, optional): Binning factor. Defaults to 1.</span>
+<span class="sd">        avg_timesteps (int, optional): Number of timesteps to average together. Defaults to 1.</span>
+<span class="sd">        timesteps_per_revolution (int | Literal[&quot;all&quot;], optional): Number of timesteps to export per revolution. Defaults to &quot;all&quot;.</span>
+<span class="sd">        export_revolutions (list | str, optional): List of revolutions to export. Defaults to &quot;all&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path to the saved volumes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">setup_logger</span><span class="p">()</span>
+    <span class="n">base_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>  <span class="c1"># use torch.no_grad() to disable gradient computation and avoid retaining graph</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;config.yaml&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">NeCTDataset</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span>  <span class="c1"># if gpu memory is less than 50 GB, load to cpu</span>
+        <span class="p">)</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">.</span><span class="n">from_cfg</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span>
+            <span class="n">reconstruction_mode</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">reconstruction_mode</span><span class="p">,</span>
+            <span class="n">sample_outside</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">sample_outside</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">checkpoints</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;checkpoints&quot;</span> <span class="o">/</span> <span class="s2">&quot;last.ckpt&quot;</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoints</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">])</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;dynamic&quot;</span><span class="p">,</span> <span class="s2">&quot;Only dynamic mode is supported for video creation&quot;</span>
+        <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">z_h</span> <span class="o">=</span> <span class="n">height</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="n">y_w</span> <span class="o">=</span> <span class="n">width</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="n">x_w</span> <span class="o">=</span> <span class="n">width</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="n">base_output_path</span> <span class="o">=</span> <span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;volumesfloat32&quot;</span>
+        <span class="n">base_output_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">angles</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">angles</span>
+        <span class="n">linspace</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">projs_per_revolution</span> <span class="o">=</span> <span class="n">get_number_of_projections_per_revolution</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">export_revolutions</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+            <span class="n">export_revolutions</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span> <span class="o">//</span> <span class="n">projs_per_revolution</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">avg_timesteps</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Averaging </span><span class="si">{</span><span class="n">avg_timesteps</span><span class="si">}</span><span class="s2"> timesteps together&quot;</span><span class="p">)</span>
+        <span class="n">total_volumes_saved</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">nVoxels</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span>
+        <span class="n">rm</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">sample_outside</span>
+        <span class="n">nVoxels</span> <span class="o">=</span> <span class="p">[</span><span class="n">nVoxels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">rm</span><span class="p">,</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">rm</span><span class="p">]</span>
+        <span class="n">start_x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_x</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">ROIx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">end_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">x_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">binning</span>
+
+        <span class="n">start_y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_y</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">ROIy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">end_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">y_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">binning</span>
+
+        <span class="n">start_z</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_z</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">ROIz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_z</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">end_z</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">z_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="k">if</span> <span class="n">show_slices</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">slice_idx</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">slice_idx</span> <span class="o">==</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_w</span><span class="p">,</span> <span class="n">x_w</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">slice_idx</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">z_h</span><span class="p">,</span> <span class="n">x_w</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">slice_idx</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">z_h</span><span class="p">,</span> <span class="n">y_w</span><span class="p">)</span>
+                <span class="n">default_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+                <span class="n">z_l</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_z</span><span class="p">,</span> <span class="n">end_z</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">z_h</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> <span class="k">if</span> <span class="n">slice_idx</span> <span class="o">!=</span> <span class="s2">&quot;z&quot;</span> <span class="k">else</span> <span class="n">default_tensor</span>
+                <span class="n">y_l</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_y</span><span class="p">,</span> <span class="n">end_y</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">y_w</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> <span class="k">if</span> <span class="n">slice_idx</span> <span class="o">!=</span> <span class="s2">&quot;y&quot;</span> <span class="k">else</span> <span class="n">default_tensor</span>
+                <span class="n">x_l</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_x</span><span class="p">,</span> <span class="n">end_x</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">x_w</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> <span class="k">if</span> <span class="n">slice_idx</span> <span class="o">!=</span> <span class="s2">&quot;x&quot;</span> <span class="k">else</span> <span class="n">default_tensor</span>
+                <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">([</span><span class="n">z_l</span><span class="p">,</span> <span class="n">y_l</span><span class="p">,</span> <span class="n">x_l</span><span class="p">],</span> <span class="n">indexing</span><span class="o">=</span><span class="s2">&quot;ij&quot;</span><span class="p">)</span>
+                <span class="n">grid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">z</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">))</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+                <span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;imgs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;imgs&quot;</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">slice_idx</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;imgs&quot;</span>
+
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">export_revolutions</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Exporting revolutions&quot;</span><span class="p">):</span>
+                <span class="n">revolution_start</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">projs_per_revolution</span>
+                <span class="n">revolution_end</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">projs_per_revolution</span>
+                <span class="k">if</span> <span class="n">timesteps_per_revolution</span> <span class="o">!=</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+
+                    <span class="n">sub_linspace</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">linspace</span><span class="p">[</span><span class="n">revolution_start</span><span class="p">],</span> <span class="n">linspace</span><span class="p">[</span><span class="n">revolution_end</span><span class="p">],</span> <span class="n">timesteps_per_revolution</span><span class="p">)</span>  <span class="c1"># skip timesteps to speed up export</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">sub_linspace</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">[</span><span class="n">revolution_start</span><span class="p">:</span><span class="n">revolution_end</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+                    <span class="nb">enumerate</span><span class="p">(</span><span class="n">sub_linspace</span><span class="p">),</span>
+                    <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">sub_linspace</span><span class="p">),</span>
+                    <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Projection&quot;</span><span class="p">,</span>
+                <span class="p">):</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">z_h</span><span class="p">,</span> <span class="n">y_w</span><span class="p">,</span> <span class="n">x_w</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">avg</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">avg_timesteps</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">z_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                            <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_z</span><span class="p">,</span> <span class="n">end_z</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">z_h</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+                        <span class="p">):</span>  <span class="c1"># progress through as we don&#39;t have enough memory to compute all at once</span>
+                            <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+                                <span class="p">[</span>
+                                    <span class="n">z_</span><span class="p">,</span>
+                                    <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_y</span><span class="p">,</span> <span class="n">end_y</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">y_w</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                                    <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_x</span><span class="p">,</span> <span class="n">end_x</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">x_w</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                                <span class="p">],</span>
+                                <span class="n">indexing</span><span class="o">=</span><span class="s2">&quot;ij&quot;</span><span class="p">,</span>
+                            <span class="p">)</span>
+                            <span class="n">grid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">z</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+                            <span class="n">output</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">+=</span> <span class="n">model</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">avg</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">))</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">y_w</span><span class="p">,</span> <span class="n">x_w</span><span class="p">)</span> <span class="o">/</span> <span class="n">avg_timesteps</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">/</span> <span class="n">geometry</span><span class="o">.</span><span class="n">max_distance_traveled</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">*</span> <span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">-</span> <span class="n">dataset</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">+</span> <span class="n">dataset</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">timesteps_per_revolution</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+                        <span class="n">proj_n</span> <span class="o">=</span> <span class="n">j</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">proj_n</span> <span class="o">=</span> <span class="p">((</span><span class="n">j</span> <span class="o">*</span> <span class="n">projs_per_revolution</span><span class="p">)</span><span class="o">//</span><span class="n">timesteps_per_revolution</span><span class="p">)</span>
+                    <span class="n">tif</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">base_output_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;T</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">04</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">proj_n</span><span class="si">:</span><span class="s2">04</span><span class="si">}</span><span class="s2">.tiff&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+                    <span class="n">total_volumes_saved</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">total_volumes_saved</span><span class="si">}</span><span class="s2"> volumes saved to </span><span class="si">{</span><span class="n">base_output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">base_output_path</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nect.dynamic_export.export_volumes_at_timesteps" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">export_volumes_at_timesteps</span>
+
+
+<a href="#nect.dynamic_export.export_volumes_at_timesteps" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">export_volumes_at_timesteps</span><span class="p">(</span><span class="n">base_path</span><span class="p">:</span> <span class="n">str</span> <span class="o">|</span> <span class="n"><span title="pathlib.Path">Path</span></span><span class="p">,</span> <span class="n">timesteps</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">float</span><span class="p">],</span> <span class="n">binning</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ROIx</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ROIy</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ROIz</span><span class="p">:</span> <span class="n">list</span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n"><span title="numpy.dtype">dtype</span></span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Exports volumes from the dynamic model output. The volumes will be saved in the base_path/volumes directory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>base_path</code></td>
+            <td>
+                  <code>str | <span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the directory containing the config.yaml and checkpoints folder.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>timesteps</code></td>
+            <td>
+                  <code>list[float]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of timesteps to export.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>binning</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Binning factor. Defaults to 1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ROIx</code></td>
+            <td>
+                  <code>list[int] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Region of interest in the x direction. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ROIy</code></td>
+            <td>
+                  <code>list[int] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Region of interest in the y direction. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ROIz</code></td>
+            <td>
+                  <code>list[int] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Region of interest in the z direction. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>dtype</code></td>
+            <td>
+                  <code><span title="numpy.dtype">dtype</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Data type of the exported volumes. Defaults to np.float32.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="numpy.float32">float32</span></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the saved volumes.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/dynamic_export.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span>
+<span class="normal">522</span>
+<span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">export_volumes_at_timesteps</span><span class="p">(</span>
+    <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">timesteps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
+    <span class="n">binning</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">ROIx</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ROIy</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ROIz</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exports volumes from the dynamic model output. The volumes will be saved in the base_path/volumes directory.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        base_path (str | Path): Path to the directory containing the config.yaml and checkpoints folder.</span>
+<span class="sd">        timesteps (list[float]): List of timesteps to export.</span>
+<span class="sd">        binning (int, optional): Binning factor. Defaults to 1.</span>
+<span class="sd">        ROIx (list[int] | None, optional): Region of interest in the x direction. Defaults to None.</span>
+<span class="sd">        ROIy (list[int] | None, optional): Region of interest in the y direction. Defaults to None.</span>
+<span class="sd">        ROIz (list[int] | None, optional): Region of interest in the z direction. Defaults to None.</span>
+<span class="sd">        dtype (np.dtype, optional): Data type of the exported volumes. Defaults to np.float32.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path to the saved volumes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">setup_logger</span><span class="p">()</span>
+    <span class="n">base_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>  <span class="c1"># use torch.no_grad() to disable gradient computation and avoid retaining graph</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;config.yaml&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">NeCTDataset</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span>  <span class="c1"># if gpu memory is less than 50 GB, load to cpu</span>
+        <span class="p">)</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">.</span><span class="n">from_cfg</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span>
+            <span class="n">reconstruction_mode</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">reconstruction_mode</span><span class="p">,</span>
+            <span class="n">sample_outside</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">sample_outside</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">checkpoints</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;checkpoints&quot;</span> <span class="o">/</span> <span class="s2">&quot;last.ckpt&quot;</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoints</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">])</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;dynamic&quot;</span><span class="p">,</span> <span class="s2">&quot;Only dynamic mode is supported for video creation&quot;</span>
+        <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">z_h</span> <span class="o">=</span> <span class="n">height</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="n">y_w</span> <span class="o">=</span> <span class="n">width</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="n">x_w</span> <span class="o">=</span> <span class="n">width</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="n">base_output_path</span> <span class="o">=</span> <span class="n">base_path</span> <span class="o">/</span> <span class="s2">&quot;volumesfloat32&quot;</span>
+        <span class="n">base_output_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">angles</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">angles</span>
+        <span class="n">linspace</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">projs_per_revolution</span> <span class="o">=</span> <span class="n">get_number_of_projections_per_revolution</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+        <span class="n">total_volumes_saved</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">nVoxels</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">nVoxel</span>
+        <span class="n">rm</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">sample_outside</span>
+        <span class="n">nVoxels</span> <span class="o">=</span> <span class="p">[</span><span class="n">nVoxels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">rm</span><span class="p">,</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">rm</span><span class="p">]</span>
+        <span class="n">start_x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_x</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">ROIx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">end_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">x_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ROIx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">binning</span>
+
+        <span class="n">start_y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_y</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">ROIy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">end_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">y_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ROIy</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">binning</span>
+
+        <span class="n">start_z</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">end_z</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">ROIz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_z</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">end_z</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">nVoxels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">z_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ROIz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">binning</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">timesteps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">timesteps</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">timesteps</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Exporting revolutions&quot;</span><span class="p">):</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">z_h</span><span class="p">,</span> <span class="n">y_w</span><span class="p">,</span> <span class="n">x_w</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">z_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_z</span><span class="p">,</span> <span class="n">end_z</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">z_h</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+            <span class="p">):</span>  <span class="c1"># progress through as we don&#39;t have enough memory to compute all at once</span>
+                <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">z_</span><span class="p">,</span>
+                        <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_y</span><span class="p">,</span> <span class="n">end_y</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">y_w</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                        <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start_x</span><span class="p">,</span> <span class="n">end_x</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">x_w</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                    <span class="p">],</span>
+                    <span class="n">indexing</span><span class="o">=</span><span class="s2">&quot;ij&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">grid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">z</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+                <span class="n">output</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">y_w</span><span class="p">,</span> <span class="n">x_w</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">/</span> <span class="n">geometry</span><span class="o">.</span><span class="n">max_distance_traveled</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">*</span> <span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">-</span> <span class="n">dataset</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">+</span> <span class="n">dataset</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+            <span class="n">tif</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">base_output_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;T</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">04</span><span class="si">}</span><span class="s2">.tiff&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+            <span class="n">total_volumes_saved</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">total_volumes_saved</span><span class="si">}</span><span class="s2"> volumes saved to </span><span class="si">{</span><span class="n">base_output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">base_output_path</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../download_demo_data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: &lt;code class=&#34;doc-symbol doc-symbol-nav doc-symbol-module&#34;&gt;&lt;/code&gt; download_demo_data">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> download_demo_data
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../fdk/" class="md-footer__link md-footer__link--next" aria-label="Next: &lt;code class=&#34;doc-symbol doc-symbol-nav doc-symbol-module&#34;&gt;&lt;/code&gt; fdk">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> fdk
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Håkon Nese & Henrik Friis
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest", "toc.follow", "content.tabs.link", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

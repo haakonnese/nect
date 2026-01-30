@@ -1,0 +1,2921 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../reconstruct/">
+      
+      
+        <link rel="next" href="geometry/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Index - NeCT - Neural Computed Tomography</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nect.sampling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeCT - Neural Computed Tomography" class="md-header__button md-logo" aria-label="NeCT - Neural Computed Tomography" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeCT - Neural Computed Tomography
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/haakonnese/NeCT" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    haakonnese/NeCT
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../userguide/start/" class="md-tabs__link">
+          
+  
+    
+  
+  User guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/licensing-and-citation/" class="md-tabs__link">
+        
+  
+    
+  
+  Licensing and citation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  API reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeCT - Neural Computed Tomography" class="md-nav__button md-logo" aria-label="NeCT - Neural Computed Tomography" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NeCT - Neural Computed Tomography
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/haakonnese/NeCT" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    haakonnese/NeCT
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../userguide/start/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    User guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/licensing-and-citation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Licensing and citation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nect
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nect
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cfg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> cfg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download_demo_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> download_demo_data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic_export/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dynamic_export
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> fdk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../network/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> network
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reconstruct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> reconstruct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> sampling
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_1_10" id="__nav_4_1_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1_10">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> sampling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="geometry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="projector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> projector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scivis_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> scivis_data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../src/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> src
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static_export/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> static_export
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../trainers/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> trainers
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../torch_extra/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> torch_extra
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> torch_extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../torch_extra/nn/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nn
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../torch_extra/typing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nect.sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=" sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Geometry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=" Geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Geometry.from_cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;from_cfg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Geometry.from_yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;from_yaml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Geometry.set_angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;set_angles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Geometry.set_detector_binning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;set_detector_binning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Geometry.set_timesteps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;set_timesteps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Projector" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Projector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=" Projector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nect.sampling.Projector.__call__" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;__call__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Index</h1>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="nect.sampling" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">sampling</span>
+
+
+<a href="#nect.sampling" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nect.sampling.Geometry" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Geometry</span>
+
+
+<a href="#nect.sampling.Geometry" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">Geometry</span><span class="p">(</span><span class="n">nDetector</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_2_int">_list_2_int</span></span><span class="p">,</span> <span class="n">dDetector</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_2_float">_list_2_float</span></span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="n">DSD</span><span class="p">:</span> <span class="n">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">DSO</span><span class="p">:</span> <span class="n">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">nVoxel</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_3_int">_list_3_int</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dVoxel</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_3_float">_list_3_float</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span> <span class="n">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">offOrigin</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_3_float">_list_3_float</span></span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">COR</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">offDetector</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_2_float">_list_2_float</span></span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">rotDetector</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_3_float">_list_3_float</span></span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">reconstruction_mode</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;voxel&#39;</span><span class="p">,</span> <span class="n">detector_binning</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">angles</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_float">_list_float</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">radians</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list">_list</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+      <p>Set up the geometry for the CT system.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>nDetector</code></td>
+            <td>
+                  <code>tuple[int, int] | list[int] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of pixels <code>[height, width]</code> of the detector</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>dDetector</code></td>
+            <td>
+                  <code>tuple[float, float] | list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Height and width of the detector (mm)</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>mode</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Type of geometry. Supported modes are <code>cone</code> and <code>parallel</code></p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>DSD</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Distance Source Detector (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>DSO</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Distance Source Origin (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>nVoxel</code></td>
+            <td>
+                  <code>tuple[int, int, int] | list[int] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of voxels <code>[z, y, x]</code> of the volume</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>dVoxel</code></td>
+            <td>
+                  <code>tuple[float, float, float] | list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Size of a voxel <code>[z, y, x]</code> (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>radius</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Radius of the object (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>height</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Height of the object (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>offOrigin</code></td>
+            <td>
+                  <code>tuple[float, float, float] | list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Offset of the object from the origin <code>[z, y, x]</code> (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>(0.0, 0.0, 0.0)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>COR</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Center of rotation (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>offDetector</code></td>
+            <td>
+                  <code>tuple[float, float] | list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Offset of the detector from the center <code>[height, width]</code> (mm)</p>
+              </div>
+            </td>
+            <td>
+                  <code>(0.0, 0.0)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>rotDetector</code></td>
+            <td>
+                  <code>tuple[float, float, float] | list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Rotation of the detector <code>[roll, pitch, yaw]</code> (radians).</p>
+              </div>
+            </td>
+            <td>
+                  <code>(0.0, 0.0, 0.0)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>reconstruction_mode</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Type of reconstruction. Supported modes are <code>'voxel'</code> and <code>'cylindrical'</code>. Default is <code>'voxel'</code></p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;voxel&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>detector_binning</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Binning factor of the detector. Default is 1</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>angles</code></td>
+            <td>
+                  <code>list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of angles.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>radians</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unit of angles. If <code>True</code>, the unit is radians, if <code>False</code> the unit is degrees. Default is <code>True</code></p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>timesteps</code></td>
+            <td>
+                  <code>list[float | int] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An array of timesteps. Do not need to be normalized.
+If the order of the angles and corresponding projections does not equal the acqustition order, this parameter needs to be set to get the timesteps correct.
+Only important for dynamic reconstruction. Overrides the timestep of the Geometry if not <code>None</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+                  <details class="quote">
+                    <summary>Source code in <code>nect/sampling/geometry.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">nDetector</span><span class="p">:</span> <span class="n">_list_2_int</span><span class="p">,</span>
+    <span class="n">dDetector</span><span class="p">:</span> <span class="n">_list_2_float</span><span class="p">,</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">DSD</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">DSO</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">nVoxel</span><span class="p">:</span> <span class="n">_list_3_int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dVoxel</span><span class="p">:</span> <span class="n">_list_3_float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">offOrigin</span><span class="p">:</span> <span class="n">_list_3_float</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+    <span class="n">COR</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">offDetector</span><span class="p">:</span> <span class="n">_list_2_float</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+    <span class="n">rotDetector</span><span class="p">:</span> <span class="n">_list_3_float</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+    <span class="n">reconstruction_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;voxel&quot;</span><span class="p">,</span>
+    <span class="n">detector_binning</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">_list_float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">radians</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">timesteps</span><span class="p">:</span> <span class="n">_list</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set up the geometry for the CT system.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        nDetector (tuple[int, int] | list[int] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Number of pixels `[height, width]` of the detector</span>
+<span class="sd">        dDetector (tuple[float, float] | list[float] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Height and width of the detector (mm)</span>
+<span class="sd">        mode (str):</span>
+<span class="sd">            Type of geometry. Supported modes are `cone` and `parallel`</span>
+<span class="sd">        DSD (float):</span>
+<span class="sd">            Distance Source Detector (mm)</span>
+<span class="sd">        DSO (float):</span>
+<span class="sd">            Distance Source Origin (mm)</span>
+<span class="sd">        nVoxel (tuple[int, int, int] | list[int] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Number of voxels `[z, y, x]` of the volume</span>
+<span class="sd">        dVoxel (tuple[float, float, float] | list[float] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Size of a voxel `[z, y, x]` (mm)</span>
+<span class="sd">        radius (float):</span>
+<span class="sd">            Radius of the object (mm)</span>
+<span class="sd">        height (float):</span>
+<span class="sd">            Height of the object (mm)</span>
+<span class="sd">        offOrigin (tuple[float, float, float] | list[float] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Offset of the object from the origin `[z, y, x]` (mm)</span>
+<span class="sd">        COR (float):</span>
+<span class="sd">            Center of rotation (mm)</span>
+<span class="sd">        offDetector (tuple[float, float] | list[float] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Offset of the detector from the center `[height, width]` (mm)</span>
+<span class="sd">        rotDetector (tuple[float, float, float] | list[float] | torch.Tensor | np.ndarray):</span>
+<span class="sd">            Rotation of the detector `[roll, pitch, yaw]` (radians).</span>
+<span class="sd">        reconstruction_mode (str):</span>
+<span class="sd">            Type of reconstruction. Supported modes are `&#39;voxel&#39;` and `&#39;cylindrical&#39;`. Default is `&#39;voxel&#39;`</span>
+<span class="sd">        detector_binning (int):</span>
+<span class="sd">            Binning factor of the detector. Default is 1</span>
+<span class="sd">        angles (list[float] | torch.Tensor | np.ndarray | None):</span>
+<span class="sd">            List of angles.</span>
+<span class="sd">        radians (bool):</span>
+<span class="sd">            Unit of angles. If `True`, the unit is radians, if `False` the unit is degrees. Default is `True`</span>
+<span class="sd">        timesteps (list[float | int] | torch.Tensor | np.ndarray | None):</span>
+<span class="sd">            An array of timesteps. Do not need to be normalized.</span>
+<span class="sd">            If the order of the angles and corresponding projections does not equal the acqustition order, this parameter needs to be set to get the timesteps correct.</span>
+<span class="sd">            Only important for dynamic reconstruction. Overrides the timestep of the Geometry if not `None`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;cone&quot;</span><span class="p">,</span> <span class="s2">&quot;parallel&quot;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported mode &#39;</span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;cone&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">DSD</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;DSD is required for cone geometry&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">DSO</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;DSO is required for cone geometry&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DSD</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">DSD</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DSO</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">DSO</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">DSD</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;DSD is not required for parallel geometry. Ignoring the value of DSD&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">DSO</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;DSO is not required for parallel geometry. Ignoring the value of DSO&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DSD</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DSO</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">reconstruction_mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;voxel&quot;</span><span class="p">,</span> <span class="s2">&quot;cylindrical&quot;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported reconstruction mode &#39;</span><span class="si">{</span><span class="n">reconstruction_mode</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">reconstruction_mode</span> <span class="o">=</span> <span class="n">reconstruction_mode</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">detector_binning</span> <span class="o">=</span> <span class="n">detector_binning</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">dDetector</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_2_float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_float</span><span class="p">(</span><span class="n">dDetector</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;dDetector&quot;</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_2_int</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_int</span><span class="p">(</span><span class="n">nDetector</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;nDetector&quot;</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">offDetector</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_2_float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_float</span><span class="p">(</span><span class="n">offDetector</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;offDetector&quot;</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rotDetector</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_3_float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_float</span><span class="p">(</span><span class="n">rotDetector</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;rotDetector&quot;</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">COR</span> <span class="o">=</span> <span class="n">COR</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">set_angles</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">radians</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">set_timesteps</span><span class="p">(</span><span class="n">timesteps</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">radius</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">height</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_3_int</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_int</span><span class="p">(</span><span class="n">nVoxel</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;nVoxel&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_3_float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_float</span><span class="p">(</span><span class="n">dVoxel</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;dVoxel&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">offOrigin</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_3_float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_float</span><span class="p">(</span><span class="n">offOrigin</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;offOrigin&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reconstruction_mode</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">radius</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">height</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="k">if</span> <span class="n">nVoxel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_3_int</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_int</span><span class="p">(</span><span class="n">nVoxel</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;nVoxel&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">dVoxel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">_tuple_3_float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_and_return_float</span><span class="p">(</span><span class="n">dVoxel</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;dVoxel&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">height</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;cone&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">nVoxel</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">dVoxel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">reconstruction_mode</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span><span class="p">:</span>
+            <span class="n">max_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="n">triangle_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DSO</span> <span class="o">+</span> <span class="n">max_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">max_distance_traveled</span> <span class="o">=</span> <span class="n">max_length</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">triangle_theta</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">max_length</span> <span class="o">=</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+            <span class="n">triangle_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DSO</span> <span class="o">+</span> <span class="n">max_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">max_distance_traveled</span> <span class="o">=</span> <span class="n">max_length</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">triangle_theta</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reconstruction_mode</span> <span class="o">==</span> <span class="s2">&quot;voxel&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">max_distance_traveled</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">reconstruction_mode</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nVoxel</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">dVoxel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_distance_traveled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_distance_traveled</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">sVoxel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sDetector</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dDetector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nDetector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dDetector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nect.sampling.Geometry.from_cfg" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">from_cfg</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#nect.sampling.Geometry.from_cfg" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">from_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">:</span> <span class="n"><span title="nect.config.GeometryCone">GeometryCone</span></span> <span class="o">|</span> <span class="n"><span title="nect.config.Geometry">Geometry</span></span><span class="p">,</span> <span class="n">reconstruction_mode</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="s1">&#39;voxel&#39;</span><span class="p">,</span> <span class="n">sample_outside</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Geometry&#39;</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Load the geometry from a configuration object.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>cfg</code></td>
+            <td>
+                  <code><span title="nect.config.GeometryCone">GeometryCone</span> | <span title="nect.config.Geometry">Geometry</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The configuration object.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>reconstruction_mode</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The reconstruction mode. Default is <code>'voxel'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;voxel&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>sample_outside</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The number of voxels to sample outside the object. Default is <code>0</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>Geometry</code></td>            <td>
+                  <code>&#39;Geometry&#39;</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The geometry object.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/sampling/geometry.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">from_cfg</span><span class="p">(</span>
+    <span class="bp">cls</span><span class="p">,</span>
+    <span class="n">cfg</span><span class="p">:</span> <span class="n">nect</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">GeometryCone</span> <span class="o">|</span> <span class="n">nect</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span>
+    <span class="n">reconstruction_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;voxel&quot;</span><span class="p">,</span>
+    <span class="n">sample_outside</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Geometry&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load the geometry from a configuration object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cfg (nect.config.GeometryCone | nect.config.Geometry): The configuration object.</span>
+<span class="sd">        reconstruction_mode (str): The reconstruction mode. Default is `&#39;voxel&#39;`.</span>
+<span class="sd">        sample_outside (int): The number of voxels to sample outside the object. Default is `0`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Geometry: The geometry object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nVoxel</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">nVoxel</span>
+    <span class="k">if</span> <span class="n">sample_outside</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">nVoxel</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sample_outside</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">nVoxel</span><span class="p">]</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+        <span class="n">nDetector</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">nDetector</span><span class="p">,</span>
+        <span class="n">dDetector</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">dDetector</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+        <span class="n">DSD</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">DSD</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="s2">&quot;DSD&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">DSO</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">DSO</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="s2">&quot;DSO&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">nVoxel</span><span class="o">=</span><span class="n">nVoxel</span><span class="p">,</span>
+        <span class="n">dVoxel</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">dVoxel</span><span class="p">,</span>
+        <span class="n">radius</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+        <span class="n">offOrigin</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">offOrigin</span><span class="p">,</span>
+        <span class="n">COR</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">COR</span><span class="p">,</span>
+        <span class="n">offDetector</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">offDetector</span><span class="p">,</span>
+        <span class="n">rotDetector</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">rotDetector</span> <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">rotDetector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">reconstruction_mode</span><span class="o">=</span><span class="n">reconstruction_mode</span><span class="p">,</span>
+        <span class="n">detector_binning</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">angles</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">angles</span><span class="p">,</span>
+        <span class="n">timesteps</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">timesteps</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nect.sampling.Geometry.from_yaml" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">from_yaml</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#nect.sampling.Geometry.from_yaml" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">from_yaml</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">str</span> <span class="o">|</span> <span class="n"><span title="pathlib.Path">Path</span></span><span class="p">,</span> <span class="n">reconstruction_mode</span><span class="p">:</span> <span class="n">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Geometry&#39;</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Load the geometry from a YAML file.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>path</code></td>
+            <td>
+                  <code>str | <span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the YAML file.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>reconstruction_mode</code></td>
+            <td>
+                  <code>str | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The reconstruction mode. Supported strings are <code>'voxel'</code> and <code>'cylindrical'</code>. Default is <code>None</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>Geometry</code></td>            <td>
+                  <code>&#39;Geometry&#39;</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The geometry object.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/sampling/geometry.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">from_yaml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">reconstruction_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Geometry&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load the geometry from a YAML file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str | Path): The path to the YAML file.</span>
+<span class="sd">        reconstruction_mode (str | None): The reconstruction mode. Supported strings are `&#39;voxel&#39;` and `&#39;cylindrical&#39;`. Default is `None`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Geometry: The geometry object.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">cfg</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">reconstruction_mode</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">reconstruction_mode</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reconstruction_mode&quot;</span><span class="p">,</span> <span class="s2">&quot;voxel&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">reconstruction_mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;voxel&quot;</span><span class="p">,</span> <span class="s2">&quot;cylindrical&quot;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Only reconstruction mode &#39;voxel&#39; and &#39;cylindrical&#39; is implemented, got &#39;</span><span class="si">{</span><span class="n">reconstruction_mode</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+        <span class="n">nDetector</span><span class="o">=</span><span class="n">cfg</span><span class="p">[</span><span class="s2">&quot;nDetector&quot;</span><span class="p">],</span>
+        <span class="n">dDetector</span><span class="o">=</span><span class="n">cfg</span><span class="p">[</span><span class="s2">&quot;dDetector&quot;</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="n">cfg</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">],</span>
+        <span class="n">DSD</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DSD&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">DSO</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DSO&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">nVoxel</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nVoxel&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">dVoxel</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dVoxel&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">radius</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;radius&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">height</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">offOrigin</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offOrigin&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)),</span>
+        <span class="n">COR</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;COR&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">offDetector</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offDetector&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)),</span>
+        <span class="n">rotDetector</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;rotDetector&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)),</span>
+        <span class="n">reconstruction_mode</span><span class="o">=</span><span class="n">reconstruction_mode</span><span class="p">,</span>
+        <span class="n">detector_binning</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">angles</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;angles&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">timesteps</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;timesteps&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">radians</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;radians&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nect.sampling.Geometry.set_angles" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">set_angles</span>
+
+
+<a href="#nect.sampling.Geometry.set_angles" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set_angles</span><span class="p">(</span><span class="n">angles</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list_float">_list_float</span></span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">radians</span><span class="p">:</span> <span class="n">bool</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Set the angles for the geometry.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>angles</code></td>
+            <td>
+                  <code>list[float] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of angles.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>radians</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unit of angles. If <code>True</code>, the unit is radians, if <code>False</code> the unit is degrees. Default is <code>True</code></p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/sampling/geometry.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set_angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angles</span><span class="p">:</span> <span class="n">_list_float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">radians</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set the angles for the geometry.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        angles (list[float] | torch.Tensor | np.ndarray | None):</span>
+<span class="sd">            List of angles.</span>
+<span class="sd">        radians (bool):</span>
+<span class="sd">            Unit of angles. If `True`, the unit is radians, if `False` the unit is degrees. Default is `True`&quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="n">angles</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">angles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angles</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angles</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angles</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angles</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">angles</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">radians</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angles</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nect.sampling.Geometry.set_detector_binning" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">set_detector_binning</span>
+
+
+<a href="#nect.sampling.Geometry.set_detector_binning" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set_detector_binning</span><span class="p">(</span><span class="n">detector_binning</span><span class="p">:</span> <span class="n">int</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Set the detector binning factor.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>detector_binning</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The binning factor of the detector</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/sampling/geometry.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set_detector_binning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detector_binning</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set the detector binning factor.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        detector_binning (int): The binning factor of the detector&quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">detector_binning</span> <span class="o">=</span> <span class="n">detector_binning</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nect.sampling.Geometry.set_timesteps" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">set_timesteps</span>
+
+
+<a href="#nect.sampling.Geometry.set_timesteps" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">set_timesteps</span><span class="p">(</span><span class="n">timesteps</span><span class="p">:</span> <span class="n"><span title="nect.sampling.geometry._list">_list</span></span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Set the timesteps for dynamic reconstruction.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>timesteps</code></td>
+            <td>
+                  <code>list[float | int] | <span title="torch.Tensor">Tensor</span> | <span title="numpy.ndarray">ndarray</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An array of timesteps. Do not need to be normalized.
+If the order of the angles and corresponding projections does not equal the acqustition order, this parameter needs to be set to get the timesteps correct.
+Only important for dynamic reconstruction. Overrides the timestep of the Geometry if not <code>None</code>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/sampling/geometry.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set_timesteps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">:</span> <span class="n">_list</span> <span class="o">|</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set the timesteps for dynamic reconstruction.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        timesteps (list[float | int] | torch.Tensor | np.ndarray | None):</span>
+<span class="sd">            An array of timesteps. Do not need to be normalized.</span>
+<span class="sd">            If the order of the angles and corresponding projections does not equal the acqustition order, this parameter needs to be set to get the timesteps correct.</span>
+<span class="sd">            Only important for dynamic reconstruction. Overrides the timestep of the Geometry if not `None`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">timesteps</span> <span class="o">=</span> <span class="n">timesteps</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nect.sampling.Projector" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Projector</span>
+
+
+<a href="#nect.sampling.Projector" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">Projector</span><span class="p">(</span><span class="n">geometry</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="nect.sampling.geometry.Geometry" href="geometry/#nect.sampling.geometry.Geometry">Geometry</a></span><span class="p">,</span> <span class="n">points_per_batch</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">points_per_ray</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n"><span title="torch.device">device</span></span> <span class="o">|</span> <span class="n">str</span> <span class="o">|</span> <span class="n">int</span><span class="p">,</span> <span class="n">random_offset_detector</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">uniform_ray_spacing</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>nect/sampling/projector.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">geometry</span><span class="p">:</span> <span class="n">Geometry</span><span class="p">,</span>
+    <span class="n">points_per_batch</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">points_per_ray</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">random_offset_detector</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">uniform_ray_spacing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">_check_and_return_cuda_device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">points_per_batch</span> <span class="o">=</span> <span class="n">points_per_batch</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">points_per_ray</span> <span class="o">=</span> <span class="n">points_per_ray</span>
+    <span class="k">if</span> <span class="n">points_per_ray</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;points_per_ray (</span><span class="si">{</span><span class="n">points_per_ray</span><span class="si">}</span><span class="s2">) must be greater than or equal to 1&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">points_per_batch</span> <span class="o">&lt;</span> <span class="n">points_per_ray</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;points_per_batch (</span><span class="si">{</span><span class="n">points_per_batch</span><span class="si">}</span><span class="s2">) must be greater than or equal to points_per_ray (</span><span class="si">{</span><span class="n">points_per_ray</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">geometry</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">random_offset_detector</span> <span class="o">=</span> <span class="n">random_offset_detector</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">uniform_ray_spacing</span> <span class="o">=</span> <span class="n">uniform_ray_spacing</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">c_geometry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">get_c_geometry</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nect.sampling.Projector.__call__" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">__call__</span>
+
+
+<a href="#nect.sampling.Projector.__call__" class="headerlink" title="Permanent link">&para;</a></h4>
+<div class="doc-signature highlight"><pre><span></span><code><span class="fm">__call__</span><span class="p">(</span><span class="nf">batch_num</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">proj</span><span class="p">:</span> <span class="n"><span title="torch.Tensor">Tensor</span></span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+      <p>Sample points along the rays, and return the points and the corresponding projection values.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>nect/sampling/projector.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">proj</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sample points along the rays, and return the points and the corresponding projection values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">starting_ray_index</span> <span class="o">=</span> <span class="n">batch_num</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">batch_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">batch_size</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_indexes</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">batch_num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">batch_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_indexes</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">%</span> <span class="n">batch_size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="n">ray_points</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">nect</span><span class="o">.</span><span class="n">sampling</span><span class="o">.</span><span class="n">ct_sampling</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+        <span class="n">random_ray_index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_indexes</span><span class="p">,</span>
+        <span class="n">geometry</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">c_geometry</span><span class="p">,</span>
+        <span class="n">angle_rad</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">angle</span><span class="p">,</span>
+        <span class="n">num_points_per_ray</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">points_per_ray</span><span class="p">,</span>
+        <span class="n">num_rays</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">starting_ray_index</span><span class="o">=</span><span class="n">starting_ray_index</span><span class="p">,</span>
+        <span class="n">max_ray_distance_per_point</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance_between_points</span><span class="p">,</span>
+        <span class="n">uniform_ray_spacing</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uniform_ray_spacing</span><span class="p">,</span>
+        <span class="c1"># random_detector_offset=False,</span>
+        <span class="n">random_detector_offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_offset_detector</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">distances</span> <span class="o">=</span> <span class="n">distances</span>
+    <span class="n">ray_points</span><span class="o">.</span><span class="n">clamp_</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">ray_points</span><span class="p">,</span>
+        <span class="n">proj</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">random_indexes</span><span class="p">[</span><span class="n">starting_ray_index</span> <span class="p">:</span> <span class="n">starting_ray_index</span> <span class="o">+</span> <span class="n">batch_size</span><span class="p">]],</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../reconstruct/" class="md-footer__link md-footer__link--prev" aria-label="Previous: &lt;code class=&#34;doc-symbol doc-symbol-nav doc-symbol-module&#34;&gt;&lt;/code&gt; reconstruct">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> reconstruct
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="geometry/" class="md-footer__link md-footer__link--next" aria-label="Next: &lt;code class=&#34;doc-symbol doc-symbol-nav doc-symbol-module&#34;&gt;&lt;/code&gt; geometry">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> geometry
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Håkon Nese & Henrik Friis
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest", "toc.follow", "content.tabs.link", "navigation.expand", "navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "navigation.indexes", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
