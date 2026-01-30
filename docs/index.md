@@ -5,6 +5,8 @@
 [Paper](https://rdcu.be/eBgrb){: .md-button .md-button--primary .md-button--large}
 [Code :fontawesome-brands-github:](https://github.com/haakonnese/nect){: .md-button .md-button--primary .md-button--large}
 
+Official implementation for the paper *Implicit neural representation for fast 4D computed tomography of multiphase flow in porous media*
+
 NeCT leverages deep learning to improve computed tomography (CT) image quality, supporting both static and dynamic CT reconstruction. The project is a collaboration between the Norwegian Univeristy of Science and Technology (NTNU) and the CT lab at Equinor.  The project is based on the INR framework [`tiny-cuda-nn`](https://github.com/NVlabs/tiny-cuda-nn/).
 
 - [User guide](userguide/start/index.md)
